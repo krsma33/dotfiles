@@ -1,2 +1,3 @@
-# configurations
+# Configurations #
+
 Tools configurations

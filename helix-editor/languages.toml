@@ -1,0 +1,21 @@
+[[language]]
+name = "rust"
+scope = "source.rust"
+injection-regex = "rust"
+file-types = ["rs"]
+roots = ["Cargo.toml", "Cargo.lock"]
+auto-format = true
+comment-token = "//"
+language-server = { command = "rust-analyzer" }
+indent = { tab-width = 4, unit = "    " }
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[[language]]
+name = "c-sharp"
+roots = ["sln", "csproj"]
+file-types = ["cs"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+language-server = { command = "omnisharp", args = ["-lsp"], timeout=10000 }
