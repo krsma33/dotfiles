@@ -20,3 +20,15 @@ auto-format = true
 comment-token = "//"
 indent = { tab-width = 4, unit = "    " }
 language-server = { command = "omnisharp", args = ["-lsp"], timeout=10000 }
+
+[[language]]
+name = "json"
+file-types = ["json"]
+auto-format = true
+config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
+
+[[language]]
+name = "yaml"
+file-types = ["yaml", "yml"]
+auto-format = true
+config = { yaml = { schemas = { kubernetes = ["/*.yaml", "/*.yml"] }, format = { enable = true } } }
