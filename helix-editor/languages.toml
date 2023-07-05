@@ -14,8 +14,9 @@ command = "clippy"
 
 [[language]]
 name = "c-sharp"
-roots = ["sln", "csproj"]
 file-types = ["cs"]
+roots = ["sln", "csproj"]
+auto-format = true
 comment-token = "//"
 indent = { tab-width = 4, unit = "    " }
 language-server = { command = "omnisharp", args = ["-lsp"], timeout=10000 }

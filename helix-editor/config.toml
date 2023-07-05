@@ -28,7 +28,8 @@ A-down = ["extend_to_line_bounds","delete_selection","paste_after"]
 [keys.insert]
 S-tab = "unindent"
 C-space = "completion"
-C-S = ":write"
+C-S = ":write-all"
+C-c = "normal_mode"
 
 [editor.lsp]
 display-inlay-hints = true
