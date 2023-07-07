@@ -31,8 +31,10 @@ A-down = ["extend_to_line_bounds","delete_selection","paste_after"] # Maps the a
 S-tab = "unindent"
 C-space = "completion"
 C-S = ":write-all"
-C-c = "normal_mode"
 "C-." = "code_action"
+
+[keys.insert.j]
+k = "normal_mode"
 
 [editor.lsp]
 display-inlay-hints = true
