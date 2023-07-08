@@ -21,16 +21,15 @@ render = true
 esc = ["collapse_selection", "keep_primary_selection"] # Maps esc to cancel multi select and select
 C-S = ":write-all"
 "ret" = ["move_line_down", "goto_first_nonwhitespace"] # Maps the enter key to move to start of next line
-C-k = ["extend_to_line_bounds","delete_selection","move_line_up","paste_before"] # Maps the ctrl-k to move line up
-C-j = ["extend_to_line_bounds","delete_selection","paste_after"] # Maps the ctrl-j to move line down
-A-up = ["extend_to_line_bounds","delete_selection","move_line_up","paste_before"] # Maps the alt-up to move line up
-A-down = ["extend_to_line_bounds","delete_selection","paste_after"] # Maps the alt-down to move line down
+A-k = ["extend_to_line_bounds","delete_selection","move_line_up","paste_before"] # Maps the alt-k to move line up
+A-j = ["extend_to_line_bounds","delete_selection","paste_after"] # Maps the alt-j to move line down
 "C-." = "code_action"
 
 [keys.insert]
 S-tab = "unindent"
 C-space = "completion"
 C-S = ":write-all"
+C-s = ":write"
 "C-." = "code_action"
 
 [keys.insert.j]
