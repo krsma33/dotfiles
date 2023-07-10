@@ -85,9 +85,14 @@ Lazy git is command line git tool
 
 ## Microsoft PowerToys
 
-[Microsoft PowerToys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD) can be used to remap keys.
+[Microsoft PowerToys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD) add a lot of nice functionalities to windows.
 
-Install and run the app, go to **Keyboard Manager** tab, and remap **Caps Lock** to **Esc**.
+    scoop install extras/powertoys
+
+Run the app: 
+
+* **Keyboard Manager** tab - remap **Caps Lock** to **Esc**
+* **FancyZones** tab - setup window tiling to desired
 
 ## Visual Studio 2022
 
