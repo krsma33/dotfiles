@@ -1,0 +1,4 @@
+inherits = "ayu_mirage"
+
+# Override background to be transparent
+"ui.background"= {}
