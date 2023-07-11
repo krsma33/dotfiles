@@ -3,8 +3,9 @@ theme = "tokyonight_transparent"
 [editor]
 line-number = "relative"
 bufferline = "multiple"
-idle-timeout = 999999 # effectively disable automatic popup on hover
+idle-timeout = 100
 completion-replace = true
+completion-trigger-len = 99 # Effectively disables annoying auto completion on hover (but also disables autocomplete, need to write CTRL-SPACE to open)
 
 [editor.cursor-shape]
 insert = "bar"
@@ -16,6 +17,11 @@ hidden = true
 
 [editor.indent-guides]
 render = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+right = ["version-control", "diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
 
 [keys.normal]
 "ret" = ["move_line_down", "goto_first_nonwhitespace"] # Maps the enter key to move to start of next line
@@ -36,6 +42,7 @@ C-space = "completion"
 C-S = ":write-all"
 C-s = ":write"
 "C-." = "code_action"
+C-h = "signature_help"
 
 [keys.insert.j]
 k = "normal_mode"
