@@ -27,6 +27,9 @@ A-j = ["extend_to_line_bounds","delete_selection","paste_after"] # Maps the alt-
 A-up = "no_op"
 A-down = "no_op"
 
+[keys.normal.space]
+l = ":toggle lsp.display-inlay-hints"
+
 [keys.insert]
 S-tab = "unindent"
 C-space = "completion"
@@ -36,6 +39,3 @@ C-s = ":write"
 
 [keys.insert.j]
 k = "normal_mode"
-
-[editor.lsp]
-display-inlay-hints = true
