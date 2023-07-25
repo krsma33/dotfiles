@@ -21,6 +21,29 @@ Scoop is a package manager (like Chocolatey)
     Set-ExecutionPolicy RemoteSigned -Scope CurrentUse # Optional: Needed to run a remote script the first time
     irm get.scoop.sh | iex
 
+## Oh my posh
+
+Oh my posh is used to customize prompt in your terminal
+
+    scoop bucket add main
+    scoop install main/oh-my-posh
+
+Download and install the nerd font. [Caskaydia Cove Nerd Font Complete](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip) looks nice.
+
+Init powershell profile
+
+    New-Item -Path $PROFILE -Type File -Force
+
+Modify newly created file by appending **oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/multiverse-neon.omp.json" | Invoke-Expression**
+
+    notepad $PROFILE
+
+## PowerShell
+
+PowerShell is the .NET Core version of PowerShell (compared to WindowsPowerShell which runs on .NET Framework)
+
+    scoop install main/pwsh
+
 ## Windows Terminal
 
 Windows Terminal is terminal created by Microsoft.
@@ -34,7 +57,6 @@ Windows Terminal configuration can be found in **windows-terminal** subfolder.
 
 Helix is a text editor which can be used as IDE with minimal setup.
     
-    scoop bucket add main
     scoop install helix
 
 Helix configuration can be found in **helix-editor** subfolder.

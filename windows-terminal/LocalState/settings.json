@@ -27,13 +27,17 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+space"
         }
     ],
     "alwaysShowNotificationIcon": false,
     "alwaysShowTabs": true,
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "firstWindowPreference": "persistedWindowLayout",
     "focusFollowMouse": false,
     "language": "en-US",
@@ -54,6 +58,11 @@
             "bellStyle": "taskbar",
             "colorScheme": "One Half Dark",
             "experimental.retroTerminalEffect": false,
+            "font": 
+            {
+                "face": "CaskaydiaCove Nerd Font Mono",
+                "size": 13.0
+            },
             "opacity": 80,
             "padding": "0",
             "scrollbarState": "hidden",
@@ -107,6 +116,13 @@
                 "name": "Azure Cloud Shell",
                 "padding": "0",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "colorScheme": "Custom Dark",
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
             }
         ]
     },
@@ -195,7 +211,7 @@
             "brightYellow": "#9ECE6A",
             "cursorColor": "#A288F7",
             "cyan": "#3BDEED",
-            "foreground": "#b3c6e6",
+            "foreground": "#B3C6E6",
             "green": "#1FA91B",
             "name": "Custom Dark",
             "purple": "#8D35C9",
