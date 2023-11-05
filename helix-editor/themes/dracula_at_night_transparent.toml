@@ -1,0 +1,4 @@
+inherits = "dracula_at_night"
+
+# Override background to be transparent
+"ui.background" = { fg = "foreground" }
