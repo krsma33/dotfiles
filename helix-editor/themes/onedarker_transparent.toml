@@ -1,0 +1,4 @@
+inherits = "onedarker"
+
+# Override background to be transparent
+"ui.background" = { fg = "foreground" }

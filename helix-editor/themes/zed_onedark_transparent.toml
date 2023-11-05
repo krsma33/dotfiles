@@ -1,0 +1,4 @@
+inherits = "zed_onedark"
+
+# Override background to be transparent
+"ui.background" = { fg = "foreground" }
