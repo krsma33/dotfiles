@@ -1,25 +1,9 @@
-[[language]]
-name = "rust"
-
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
-[[language]]
-name = "c-sharp"
-file-types = ["cs"]
-roots = ["sln", "csproj"]
-auto-format = true
-comment-token = "//"
-indent = { tab-width = 4, unit = "    " }
-language-server = { command = "omnisharp", args = ["-lsp"], timeout=10000 }
+[language-server.vscode-json-language-server.config]
+provideFormatter = true
+json = { "keepLines" = { "enable" = true } }
 
-[[language]]
-name = "json"
-file-types = ["json"]
-auto-format = true
-config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
-
-[[language]]
-name = "yaml"
-auto-format = true
-config = { yaml = { schemas = { kubernetes = ["/*.yaml", "/*.yml"] }, format = { enable = true } } }
+[language-server.yaml-language-server.config]
+yaml = { schemas = { kubernetes = ["/*.yaml", "/*.yml"] }, format = { enable = true } } 
