@@ -3,6 +3,8 @@
 <!--toc:start-->
 - [Configurations](#configurations)
   - [Scoop](#scoop)
+  - [Oh my posh](#oh-my-posh)
+  - [PowerShell](#powershell)
   - [Windows Terminal](#windows-terminal)
   - [Helix](#helix)
     - [Rust](#rust)
@@ -11,7 +13,10 @@
     - [YAML](#yaml)
     - [Markdown](#markdown)
   - [Lazygit](#lazygit)
+  - [Alacritty Terminal](#alacritty-terminal)
+  - [NeoVim](#neovim)
   - [Microsoft PowerToys](#microsoft-powertoys)
+  - [Visual Studio 2022](#visual-studio-2022)
 <!--toc:end-->
 
 ## Scoop
@@ -105,6 +110,27 @@ Lazy git is command line git tool
 
     scoop install extras/lazygit
 
+## Alacritty Terminal
+
+Minimalistic terminal written in Rust
+
+    scoop install extras/alacritty
+
+## NeoVim
+
+Text editor which can be used as IDE with a lot of configuration, but more mature than Helix
+
+    scoop install main/neovim
+    scoop install main/make
+    scoop install main/mingw
+    scoop install main/ripgrep
+
+For initial setup we use NvChad distro
+
+    git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim --depth 1 && nvim
+
+Check neovim folder for more config customization
+    
 ## Microsoft PowerToys
 
 [Microsoft PowerToys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD) add a lot of nice functionalities to windows.
