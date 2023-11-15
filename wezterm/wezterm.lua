@@ -70,12 +70,9 @@ config.colors = {
 
 config.window_background_opacity = 0.97
 
+config.allow_win32_input_mode = false
+
 config.keys = {
-  {
-    key = '.',
-    mods = 'CTRL',
-    action = wezterm.action.SendString '\xc2\xb5',
-  },
   {
     key = 'Space',
     mods = 'CTRL',
