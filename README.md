@@ -13,7 +13,7 @@
     - [YAML](#yaml)
     - [Markdown](#markdown)
   - [Lazygit](#lazygit)
-  - [Alacritty Terminal](#alacritty-terminal)
+  - [Wezterm](#wezterm)
   - [NeoVim](#neovim)
   - [Microsoft PowerToys](#microsoft-powertoys)
   - [Visual Studio 2022](#visual-studio-2022)
@@ -110,11 +110,11 @@ Lazy git is command line git tool
 
     scoop install extras/lazygit
 
-## Alacritty Terminal
+## Wezterm
 
-Minimalistic terminal written in Rust
+Terminal written in Rust
 
-    scoop install extras/alacritty
+    scoop install extras/wezterm
 
 ## NeoVim
 
