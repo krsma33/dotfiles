@@ -1,4 +1,3 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local lspoverloads = require "lsp-overloads"
@@ -50,7 +49,6 @@ lspconfig.omnisharp.setup {
       client.server_capabilities.semanticTokensProvider = nil
     end
   end,
-
   capabilities = capabilities,
 
   cmd = { "dotnet", vim.env.USERPROFILE .. "/scoop/apps/omnisharp-net6/current/omnisharp.dll" },
@@ -91,4 +89,14 @@ lspconfig.omnisharp.setup {
   analyze_open_documents_only = false,
 }
 
--- require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())
+require("telescope").setup {
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+      }
+    }
+  }
+}
+-- To get ui-select loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require("telescope").load_extension("ui-select")

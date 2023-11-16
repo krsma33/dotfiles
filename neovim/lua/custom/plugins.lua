@@ -73,6 +73,10 @@ local plugins = {
   },
   {
     "Issafalcon/lsp-overloads.nvim",
-  }
+  },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+  },
 }
+
 return plugins
