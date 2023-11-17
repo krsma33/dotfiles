@@ -1,1 +1,3 @@
-vim.opt.colorcolumn = "120"
+local opt = vim.opt
+
+opt.relativenumber = true

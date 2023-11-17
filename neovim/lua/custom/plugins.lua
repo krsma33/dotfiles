@@ -17,65 +17,81 @@ local plugins = {
   {
     "rust-lang/rust.vim",
     ft = "rust",
-    init = function ()
+    init = function()
       vim.g.rustfmt_autosave = 1
-    end
+    end,
   },
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
-    opts = function ()
-     return require "custom.configs.rust-tools"
+    opts = function()
+      return require "custom.configs.rust-tools"
     end,
-    config = function (_, opts)
-      require('rust-tools').setup(opts)
+    config = function(_, opts)
+      require("rust-tools").setup(opts)
     end,
   },
   {
     "mfussenegger/nvim-dap",
   },
   {
-    'saecki/crates.nvim',
-    ft = {"rust", "toml"},
+    "saecki/crates.nvim",
+    ft = { "rust", "toml" },
     config = function(_, opts)
-      local crates = require('crates')
+      local crates = require "crates"
       crates.setup(opts)
       crates.show()
     end,
   },
   {
     "hrsh7th/nvim-cmp",
-    opts = function()
-      local M = require "plugins.configs.cmp"
-      table.insert(M.sources, {name = "crates"})
-      return M
-    end,
+    opts = require("custom.configs.cmp").opts,
   },
   {
+    -- Just to override and set ensure_installed
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        -- defaults 
-        "vim",
-        "lua",
-
-        -- web dev 
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "json",
-        "c_charp",
-      },
-    },
+    opts = require("custom.configs.treesitter").opts,
+  },
+  {
+    -- Just to override and set ensure_installed
+    "williamboman/mason.nvim",
+    opts = require("custom.configs.mason").opts,
   },
   {
     "Issafalcon/lsp-overloads.nvim",
   },
   {
+    -- Code action popup
     "nvim-telescope/telescope-ui-select.nvim",
+  },
+  {
+    -- Code formatter
+    "stevearc/conform.nvim",
+    opts = require("custom.configs.conform").opts,
+    event = "VeryLazy",
+  },
+  {
+    -- Move lines and blocks of code
+    "echasnovski/mini.move",
+    version = false,
+    config = function()
+      require("mini.move").setup {
+        options = {
+          reindent_linewise = true,
+        },
+      }
+    end,
+    event = "VeryLazy",
+  },
+  {
+    -- Highlight the word under the cursor
+    "echasnovski/mini.cursorword",
+    version = false,
+    config = function()
+      require("mini.cursorword").setup {}
+    end,
+    event = "BufRead",
   },
 }
 
