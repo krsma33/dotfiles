@@ -1,54 +1,15 @@
+local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
-local lspoverloads = require "lsp-overloads"
-local utils = require "core.utils"
-
-lspconfig.lua_ls.setup {
-  on_init = function(client)
-    local path = client.workspace_folders[1].name
-    if not vim.loop.fs_stat(path .. "/.luarc.json") and not vim.loop.fs_stat(path .. "/.luarc.jsonc") then
-      client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
-        Lua = {
-          runtime = {
-            -- Tell the language server which version of Lua you're using
-            -- (most likely LuaJIT in the case of Neovim)
-            version = "LuaJIT",
-          },
-          -- Make the server aware of Neovim runtime files
-          workspace = {
-            checkThirdParty = false,
-            library = {
-              vim.env.VIMRUNTIME,
-              -- "${3rd}/luv/library"
-              -- "${3rd}/busted/library",
-            },
-            -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-            -- library = vim.api.nvim_get_runtime_file("", true)
-          },
-        },
-      })
-
-      client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-    end
-    return true
-  end,
-}
 
 lspconfig.omnisharp.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-
-    utils.load_mappings("lspconfig", { buffer = bufnr })
-
+    on_attach(client, bufnr)
     if client.server_capabilities.signatureHelpProvider then
-      lspoverloads.setup(client, {})
-    end
-
-    if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
-      client.server_capabilities.semanticTokensProvider = nil
+      require("lsp-overloads").setup(client, {})
     end
   end,
+
   capabilities = capabilities,
 
   cmd = { "dotnet", vim.env.LOCALAPPDATA .. "/nvim-data/mason/packages/omnisharp/libexec/OmniSharp.dll" },
@@ -88,14 +49,3 @@ lspconfig.omnisharp.setup {
   -- true
   analyze_open_documents_only = false,
 }
-
-require("telescope").setup {
-  extensions = {
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown {},
-    },
-  },
-}
--- To get ui-select loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-require("telescope").load_extension "ui-select"

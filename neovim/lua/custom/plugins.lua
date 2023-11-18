@@ -1,5 +1,6 @@
 local plugins = {
   {
+    -- LSP Server dependencies management
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
@@ -8,13 +9,23 @@ local plugins = {
     },
   },
   {
+    -- LSP
     "neovim/nvim-lspconfig",
+
+    dependencies = {
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function()
+        require "custom.configs.null-ls"
+      end,
+    },
+
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
   },
   {
+    -- Rust lsp
     "rust-lang/rust.vim",
     ft = "rust",
     init = function()
@@ -22,6 +33,7 @@ local plugins = {
     end,
   },
   {
+    -- Rust tools
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
@@ -33,9 +45,11 @@ local plugins = {
     end,
   },
   {
+    -- Debbuging
     "mfussenegger/nvim-dap",
   },
   {
+    -- Rust crates goodies
     "saecki/crates.nvim",
     ft = { "rust", "toml" },
     config = function(_, opts)
@@ -45,6 +59,7 @@ local plugins = {
     end,
   },
   {
+    -- Code completions
     "hrsh7th/nvim-cmp",
     opts = require("custom.configs.cmp").opts,
   },
@@ -52,6 +67,11 @@ local plugins = {
     -- Just to override and set ensure_installed
     "nvim-treesitter/nvim-treesitter",
     opts = require("custom.configs.treesitter").opts,
+  },
+  {
+    -- File tree
+    "nvim-tree/nvim-tree.lua",
+    opts = require("custom.configs.nvimtree").opts,
   },
   {
     -- Just to override and set ensure_installed
@@ -64,6 +84,19 @@ local plugins = {
   {
     -- Code action popup
     "nvim-telescope/telescope-ui-select.nvim",
+    config = function()
+      require("telescope").setup {
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown {},
+          },
+        },
+      }
+      -- To get ui-select loaded and working with telescope, you need to call
+      -- load_extension, somewhere after setup function:
+      require("telescope").load_extension "ui-select"
+    end,
+    event = "VeryLazy",
   },
   {
     -- Code formatter
@@ -92,6 +125,14 @@ local plugins = {
       require("mini.cursorword").setup {}
     end,
     event = "BufRead",
+  },
+  {
+    -- LazyGit integration
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    lazy = false,
   },
 }
 

@@ -1,15 +1,39 @@
 local M = {}
 
+M.disabled = {
+  n = {
+    ["<leader>ra"] = "",
+    ["<leader>ca"] = "",
+    ["<leader>ls"] = "",
+  },
+
+  v = {
+    ["<leader>ca"] = "",
+  },
+}
+
 M.general = {
   n = {
     ["U"] = { "<C-r>", "Undo" },
+    ["<leader>gg"] = {
+      ":LazyGit<CR>",
+      "Open Lazygit",
+    },
   },
 
   i = {
     ["<S-Tab>"] = {
-      "<cmd>:< <CR>",
-      "Unindent",
+      "<BS>",
+      "Backspace",
     },
+    ["jk"] = {
+      "<ESC>",
+      "Escape insert mode",
+      opts = { nowait = true },
+    },
+  },
+
+  v = {
     ["jk"] = {
       "<ESC>",
       "Escape insert mode",
@@ -28,11 +52,23 @@ M.lspconfig = {
       end,
       "LSP code action",
     },
+    ["<C-Space>"] = {
+      function()
+        vim.lsp.buf.hover()
+      end,
+      "LSP hover",
+    },
     ["<C-S-Space>"] = {
       function()
         vim.lsp.buf.signature_help()
       end,
       "LSP signature help",
+    },
+    ["<C-r><C-r>"] = {
+      function()
+        require("nvchad.renamer").open()
+      end,
+      "LSP rename",
     },
   },
 
@@ -48,6 +84,15 @@ M.lspconfig = {
         vim.lsp.buf.signature_help()
       end,
       "LSP signature help",
+    },
+  },
+
+  v = {
+    ["<C-.>"] = {
+      function()
+        vim.lsp.buf.code_action()
+      end,
+      "LSP code action",
     },
   },
 }
