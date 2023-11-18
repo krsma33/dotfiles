@@ -90,6 +90,36 @@ config.keys = {
 		mods = "",
 		action = wezterm.action.ToggleFullScreen,
 	},
+	{
+		key = "h",
+		mods = "CTRL",
+		action = wezterm.action.SendKey({ key = "LeftArrow" }),
+	},
+	{
+		key = "j",
+		mods = "CTRL",
+		action = wezterm.action.SendKey({ key = "DownArrow" }),
+	},
+	{
+		key = "k",
+		mods = "CTRL",
+		action = wezterm.action.SendKey({ key = "UpArrow" }),
+	},
+	{
+		key = "l",
+		mods = "CTRL",
+		action = wezterm.action.SendKey({ key = "RightArrow" }),
+	},
+	{
+		key = "w",
+		mods = "CTRL",
+		action = wezterm.action.SendKey({ key = "Home" }),
+	},
+	{
+		key = "e",
+		mods = "CTRL",
+		action = wezterm.action.SendKey({ key = "End" }),
+	},
 }
 
 config.mouse_bindings = {
