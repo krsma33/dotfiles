@@ -1,6 +1,7 @@
 # Configurations
 
 <!--toc:start-->
+
 - [Configurations](#configurations)
   - [Scoop](#scoop)
   - [Oh my posh](#oh-my-posh)
@@ -17,7 +18,7 @@
   - [NeoVim](#neovim)
   - [Microsoft PowerToys](#microsoft-powertoys)
   - [Visual Studio 2022](#visual-studio-2022)
-<!--toc:end-->
+  <!--toc:end-->
 
 ## Scoop
 
@@ -61,7 +62,7 @@ Windows Terminal configuration can be found in **windows-terminal** subfolder.
 ## Helix
 
 Helix is a text editor which can be used as IDE with minimal setup.
-    
+
     scoop install helix
 
 Helix configuration can be found in **helix-editor** subfolder.
@@ -129,18 +130,22 @@ For initial setup we use NvChad distro
 
     git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim --depth 1 && nvim
 
-Check neovim folder for more config customization
-    
+Copy configuration files form **neovim** directory
+
+Open neovim and wait for Lazy to install the plugins, after which quit neovim and reopen
+
+    neovim
+
 ## Microsoft PowerToys
 
 [Microsoft PowerToys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD) add a lot of nice functionalities to windows.
 
     scoop install extras/powertoys
 
-Run the app: 
+Run the app:
 
-* **Keyboard Manager** tab - remap **Caps Lock** to **Esc**
-* **FancyZones** tab - setup window tiling to desired
+- **Keyboard Manager** tab - remap **Caps Lock** to **Esc**
+- **FancyZones** tab - setup window tiling to desired
 
 ## Visual Studio 2022
 
