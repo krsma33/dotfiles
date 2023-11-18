@@ -5,6 +5,7 @@ M.disabled = {
     ["<leader>ra"] = "",
     ["<leader>ca"] = "",
     ["<leader>ls"] = "",
+    ["Q"] = "",
   },
 
   v = {
@@ -15,6 +16,10 @@ M.disabled = {
 M.general = {
   n = {
     ["U"] = { "<C-r>", "Undo" },
+    ["<C-d>"] = { "<C-d>zz" },
+    ["<C-u>"] = { "<C-u>zz" },
+    ["n"] = { "nzzzv" },
+    ["N"] = { "Nzzzv" },
     ["<leader>gg"] = {
       ":LazyGit<CR>",
       "Open Lazygit",
@@ -28,16 +33,7 @@ M.general = {
     },
     ["jk"] = {
       "<ESC>",
-      "Escape insert mode",
-      opts = { nowait = true },
-    },
-  },
-
-  v = {
-    ["jk"] = {
-      "<ESC>",
-      "Escape insert mode",
-      opts = { nowait = true },
+      "Exit insert mode",
     },
   },
 }
@@ -135,6 +131,17 @@ M.dap = {
         require("dap").step_out()
       end,
       "step out of method",
+    },
+  },
+}
+
+M.crates = {
+  n = {
+    ["<leader>rcu"] = {
+      function()
+        require("crates").upgrade_all_crates()
+      end,
+      "Update rust crates",
     },
   },
 }

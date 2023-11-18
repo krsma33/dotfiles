@@ -13,10 +13,12 @@ M.opts = {
     -- HTML
     "prettier",
 
+    -- Rust
+    "rust-analyzer",
+
     -- yaml
     "yamlfix",
   },
 }
 
 return M
-

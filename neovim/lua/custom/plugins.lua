@@ -1,14 +1,5 @@
 local plugins = {
   {
-    -- LSP Server dependencies management
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "rust-analyzer",
-      },
-    },
-  },
-  {
     -- LSP
     "neovim/nvim-lspconfig",
 
@@ -51,7 +42,19 @@ local plugins = {
   {
     -- Rust crates goodies
     "saecki/crates.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
     ft = { "rust", "toml" },
+    opts = {
+      src = {
+        cmp = {
+          enabled = true,
+        },
+      },
+      null_ls = {
+        enabled = true,
+        name = "crates.nvim",
+      },
+    },
     config = function(_, opts)
       local crates = require "crates"
       crates.setup(opts)
@@ -62,6 +65,11 @@ local plugins = {
     -- Code completions
     "hrsh7th/nvim-cmp",
     opts = require("custom.configs.cmp").opts,
+  },
+  {
+    -- LSP Server dependencies management
+    "williamboman/mason.nvim",
+    opts = require("custom.configs.mason").opts,
   },
   {
     -- Just to override and set ensure_installed
@@ -132,7 +140,7 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    lazy = false,
+    event = "VeryLazy",
   },
 }
 
