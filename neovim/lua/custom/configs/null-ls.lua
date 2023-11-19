@@ -6,7 +6,15 @@ local lint = null_ls.builtins.diagnostics
 local sources = {
   formatting.csharpier,
   formatting.stylua,
-  formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
+  formatting.prettier.with {
+    filetypes = {
+      "html",
+      "markdown",
+      "css",
+      "yaml",
+      "json",
+    },
+  },
 
   lint.shellcheck,
 }
@@ -29,4 +37,3 @@ null_ls.setup {
     end
   end,
 }
-

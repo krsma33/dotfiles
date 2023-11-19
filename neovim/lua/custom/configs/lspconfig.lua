@@ -49,3 +49,16 @@ lspconfig.omnisharp.setup {
   -- true
   analyze_open_documents_only = false,
 }
+
+lspconfig.yamlls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+
+  settings = {
+    yaml = {
+      schemas = {
+         kubernetes = "/*.yaml",
+      },
+    },
+  },
+}

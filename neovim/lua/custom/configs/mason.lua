@@ -18,6 +18,7 @@ M.opts = {
 
     -- yaml
     "yamlfix",
+    "yaml-language-server",
   },
 }
 

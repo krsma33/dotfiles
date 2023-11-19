@@ -110,16 +110,6 @@ config.keys = {
 		mods = "CTRL",
 		action = wezterm.action.SendKey({ key = "RightArrow" }),
 	},
-	{
-		key = "w",
-		mods = "CTRL",
-		action = wezterm.action.SendKey({ key = "Home" }),
-	},
-	{
-		key = "e",
-		mods = "CTRL",
-		action = wezterm.action.SendKey({ key = "End" }),
-	},
 }
 
 config.mouse_bindings = {
