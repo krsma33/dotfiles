@@ -6,11 +6,19 @@ M.disabled = {
     ["<leader>ca"] = "",
     ["<leader>ls"] = "",
     ["Q"] = "",
+    ["<A-h>"] = "",
+    ["<A-v>"] = "",
   },
 
   v = {
     ["<leader>ca"] = "",
   },
+
+  t = {
+    ["<A-h>"] = "",
+    ["<A-v>"] = "",
+  },
+
 }
 
 M.general = {
@@ -142,6 +150,44 @@ M.crates = {
         require("crates").upgrade_all_crates()
       end,
       "Update rust crates",
+    },
+  },
+}
+
+M.nvterm = {
+  plugin = true,
+
+  t = {
+    -- toggle in terminal mode
+    ["<A-H>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+
+    ["<A-V>"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "Toggle vertical term",
+    },
+  },
+
+  n = {
+    -- toggle in normal mode
+    ["<A-H>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+
+    ["<A-V>"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "Toggle vertical term",
     },
   },
 }

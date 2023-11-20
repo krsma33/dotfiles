@@ -241,7 +241,7 @@ config.key_tables = {
       action = act.SendKey({ key = "RightArrow" }),
     },
     {
-      key = "w",
+      key = "b",
       mods = "CTRL",
       action = act.SendKey({ key = "Home" }),
     },
