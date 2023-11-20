@@ -1,6 +1,7 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
+local root_pattern = require("lspconfig/util").root_pattern
 
 lspconfig.omnisharp.setup {
   on_attach = function(client, bufnr)
@@ -48,6 +49,11 @@ lspconfig.omnisharp.setup {
   -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
   -- true
   analyze_open_documents_only = false,
+
+  root_dir = function(...)
+    local result = root_pattern ".sln"(...) or root_pattern ".csproj"(...)
+    return result ~= nil and result or vim.loop.cwd()
+  end,
 }
 
 lspconfig.yamlls.setup {
@@ -57,7 +63,7 @@ lspconfig.yamlls.setup {
   settings = {
     yaml = {
       schemas = {
-         kubernetes = "/*.yaml",
+        kubernetes = "/*.yaml",
       },
     },
   },
