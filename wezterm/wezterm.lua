@@ -200,8 +200,8 @@ config.keys = {
 		action = act.ToggleFullScreen,
 	},
   {
-    key = "v",
-    mods = "CTRL|SHIFT",
+    key = "i",
+    mods = "CTRL",
     action = act.ActivateKeyTable {
       name = "vim",
       one_shot = false,
