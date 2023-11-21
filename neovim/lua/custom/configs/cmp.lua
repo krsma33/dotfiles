@@ -1,19 +1,18 @@
 local M = {}
 
-local cmp = require "cmp"
-
-local confirm = function(fallback)
-  if cmp.visible() then
-    cmp.confirm()
-  elseif require("luasnip").expand_or_jumpable() then
-    vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-  else
-    fallback()
-  end
-end
-
 M.opts = function()
   local conf = require "plugins.configs.cmp"
+  local cmp = require "cmp"
+
+  local confirm = function(fallback)
+    if cmp.visible() then
+      cmp.confirm()
+    elseif require("luasnip").expand_or_jumpable() then
+      vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+    else
+      fallback()
+    end
+  end
   table.insert(conf.sources, { name = "crates" })
 
   conf.mapping["<C-e>"] = cmp.mapping.abort()

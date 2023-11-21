@@ -27,7 +27,9 @@ local plugins = {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
-    opts = require "custom.configs.rust-tools",
+    opts = function()
+      return require "custom.configs.rust-tools"
+    end,
     config = function(_, opts)
       require("rust-tools").setup(opts)
     end,
@@ -79,11 +81,7 @@ local plugins = {
     opts = require("custom.configs.nvimtree").opts,
   },
   {
-    -- Just to override and set ensure_installed
-    "williamboman/mason.nvim",
-    opts = require("custom.configs.mason").opts,
-  },
-  {
+    -- Signature help for multiple overloads
     "Issafalcon/lsp-overloads.nvim",
   },
   {
