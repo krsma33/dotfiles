@@ -18,7 +18,6 @@ M.disabled = {
     ["<A-h>"] = "",
     ["<A-v>"] = "",
   },
-
 }
 
 M.general = {

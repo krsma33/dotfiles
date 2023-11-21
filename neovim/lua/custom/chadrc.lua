@@ -1,7 +1,7 @@
 local M = {}
 
 M.ui = {
-  theme = "nord",
+  theme = "oxocarbon",
   transparency = true,
 }
 
