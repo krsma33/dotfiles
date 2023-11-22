@@ -121,19 +121,19 @@ M.dap = {
       end,
       "start/continue to next breakpoint",
     },
-    ["<F10>"] = {
+    ["<F6>"] = {
       function()
         require("dap").step_over()
       end,
       "step over next line",
     },
-    ["<F11>"] = {
+    ["<F7>"] = {
       function()
         require("dap").step_into()
       end,
       "step into method",
     },
-    ["<F12>"] = {
+    ["<F8>"] = {
       function()
         require("dap").step_out()
       end,

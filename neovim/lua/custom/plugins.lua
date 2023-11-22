@@ -43,10 +43,6 @@ local plugins = {
           enabled = true,
         },
       },
-      null_ls = {
-        enabled = true,
-        name = "crates.nvim",
-      },
     },
     config = function(_, opts)
       local crates = require "crates"
