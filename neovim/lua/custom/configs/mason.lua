@@ -16,6 +16,7 @@ M.opts = {
 
     -- Rust
     "rust-analyzer",
+    "codelldb",
 
     -- yaml
     "yamlfix",
