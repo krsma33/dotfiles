@@ -9,6 +9,7 @@ M.opts = {
     -- C# stuff
     "omnisharp",
     "csharpier",
+    "netcoredbg",
 
     -- HTML
     "prettier",

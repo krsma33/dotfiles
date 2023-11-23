@@ -29,8 +29,21 @@ local plugins = {
     end,
   },
   {
-    -- Debbuging
+    -- Debugging
     "mfussenegger/nvim-dap",
+    config = function()
+      require "custom.configs.nvim-dap"
+    end,
+    event = "VeryLazy",
+  },
+  {
+    -- Debugging UI
+    "rcarriga/nvim-dap-ui",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      require "custom.configs.nvim-dap-ui"
+    end,
+    event = "VeryLazy",
   },
   {
     -- Rust crates goodies
