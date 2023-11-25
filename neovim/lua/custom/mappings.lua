@@ -31,6 +31,19 @@ M.general = {
       ":LazyGit<CR>",
       "Open Lazygit",
     },
+    ["<C-/>"] = {
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      "Toggle comment",
+    },
+  },
+
+  v = {
+    ["<C-/>"] = {
+      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+      "Toggle comment",
+    },
   },
 
   i = {
@@ -103,41 +116,52 @@ M.lspconfig = {
 M.dap = {
 
   n = {
-    ["<leader>db"] = {
-      "<cmd> DapToggleBreakpoint <CR>",
-      "Toggle breakpoint",
-    },
-    ["<leader>dus"] = {
+    ["<leader>du"] = {
       function()
-        local widgets = require "dap.ui.widgets"
-        local sidebar = widgets.sidebar(widgets.scopes)
-        sidebar.open()
+        require("dapui").toggle()
       end,
-      "Open debugging sidebar",
+      "Open debugging ui",
+    },
+    ["<leader>dr"] = {
+      function()
+        require("rust-tools").debuggables.debuggables()
+      end,
+      "Open Rust debugging dialog",
+    },
+    ["<leader>db"] = {
+      "<cmd>DapToggleBreakpoint<CR>",
+      "Debug: Toggle breakpoint",
     },
     ["<F5>"] = {
       function()
         require("dap").continue()
       end,
-      "start/continue to next breakpoint",
+      "Debug: Run/Continue",
     },
     ["<F6>"] = {
       function()
         require("dap").step_over()
       end,
-      "step over next line",
+      "Debug: Step over",
     },
     ["<F7>"] = {
       function()
         require("dap").step_into()
       end,
-      "step into method",
+      "Debug: Step into",
     },
     ["<F8>"] = {
       function()
         require("dap").step_out()
       end,
-      "step out of method",
+      "Debug: Step outd",
+    },
+    ["<F9>"] = {
+      function()
+        require("dap").terminate()
+        require("dapui").close()
+      end,
+      "Debug: Terminate",
     },
   },
 }

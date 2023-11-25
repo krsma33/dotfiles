@@ -2,7 +2,6 @@ local dap = require "dap"
 local mason_registry = require "mason-registry"
 
 -- .NET
-
 local netcoredbg = mason_registry.get_package "netcoredbg"
 local netcoredbg_path = netcoredbg:get_install_path() .. "\\netcoredbg\\netcoredbg.exe"
 
@@ -24,7 +23,6 @@ dap.configurations.cs = {
 }
 
 -- Rust
-
 local codelldb = mason_registry.get_package "codelldb"
 local codelldb_path = codelldb:get_install_path() .. "\\extension\\adapter\\codelldb.exe"
 
