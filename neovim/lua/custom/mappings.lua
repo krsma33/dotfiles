@@ -118,7 +118,7 @@ M.dap = {
   n = {
     ["<leader>du"] = {
       function()
-        require("dapui").toggle()
+        require("dapui").toggle { reset = true }
       end,
       "Open debugging ui",
     },
