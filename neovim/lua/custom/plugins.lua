@@ -1,5 +1,10 @@
 local plugins = {
   {
+    -- NvChad terminal disable
+    "NvChad/nvterm",
+    enabled = false,
+  },
+  {
     -- LSP
     "neovim/nvim-lspconfig",
     dependencies = "stevearc/conform.nvim",
@@ -133,11 +138,11 @@ local plugins = {
     event = "BufRead",
   },
   {
-    -- LazyGit integration
-    "kdheepak/lazygit.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
+    -- Terminal goodies
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = require("custom.configs.toggleterm").opts,
+    config = true,
     event = "VeryLazy",
   },
 }

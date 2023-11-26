@@ -8,6 +8,7 @@ M.disabled = {
     ["Q"] = "",
     ["<A-h>"] = "",
     ["<A-v>"] = "",
+    ["<leader>n"] = "",
   },
 
   v = {
@@ -28,7 +29,9 @@ M.general = {
     ["n"] = { "nzzzv" },
     ["N"] = { "Nzzzv" },
     ["<leader>gg"] = {
-      ":LazyGit<CR>",
+      function()
+        require("custom.configs.lazygit").lazygit_toggle()
+      end,
       "Open Lazygit",
     },
     ["<C-/>"] = {
@@ -122,12 +125,6 @@ M.dap = {
       end,
       "Open debugging ui",
     },
-    ["<leader>dr"] = {
-      function()
-        require("rust-tools").debuggables.debuggables()
-      end,
-      "Open Rust debugging dialog",
-    },
     ["<leader>db"] = {
       "<cmd>DapToggleBreakpoint<CR>",
       "Debug: Toggle breakpoint",
@@ -166,7 +163,7 @@ M.dap = {
   },
 }
 
-M.crates = {
+M.rust = {
   n = {
     ["<leader>rcu"] = {
       function()
@@ -174,43 +171,80 @@ M.crates = {
       end,
       "Update rust crates",
     },
+    ["<leader>rr"] = {
+      function()
+        require("rust-tools").runnables.runnables()
+      end,
+      "Open Rust run dialog",
+    },
+    ["<leader>rd"] = {
+      function()
+        require("rust-tools").debuggables.debuggables()
+      end,
+      "Open Rust debug dialog",
+    },
   },
 }
 
-M.nvterm = {
-  plugin = true,
+M.dotnet = {
+  n = {
+    ["<leader>nb"] = {
+      '<cmd>TermExec direction="horizontal" cmd="dotnet build"<CR>',
+      "Run dotnet build",
+    },
+    ["<leader>nc"] = {
+      '<cmd>TermExec direction="horizontal" cmd="dotnet clean"<CR>',
+      "Run dotnet clean",
+    },
+    ["<leader>nr"] = {
+      '<cmd>TermExec direction="horizontal" cmd="dotnet run"<CR>',
+      "Run dotnet run",
+    },
+    ["<leader>nt"] = {
+      '<cmd>TermExec direction="horizontal" cmd="dotnet test"<CR>',
+      "Run dotnet test",
+    },
+    ["<leader>np"] = {
+      '<cmd>TermExec direction="horizontal" cmd="dotnet publish"<CR>',
+      "Run dotnet publish",
+    },
+  },
+}
 
+M.toggleterm = {
   t = {
     -- toggle in terminal mode
+    ["<A-i>"] = {
+      '<cmd>ToggleTerm direction="float"<CR>',
+      "Toggle floating terminal",
+    },
+
     ["<A-H>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "Toggle horizontal term",
+      '<cmd>ToggleTerm direction="horizontal"<CR>',
+      "Toggle horizontal terminal",
     },
 
     ["<A-V>"] = {
-      function()
-        require("nvterm.terminal").toggle "vertical"
-      end,
-      "Toggle vertical term",
+      '<cmd>ToggleTerm direction="vertical"<CR>',
+      "Toggle vertical terminal",
     },
   },
 
   n = {
     -- toggle in normal mode
+    ["<A-i>"] = {
+      '<cmd>ToggleTerm direction="float"<CR>',
+      "Toggle floating terminal",
+    },
+
     ["<A-H>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "Toggle horizontal term",
+      '<cmd>ToggleTerm direction="horizontal"<CR>',
+      "Toggle horizontal terminal",
     },
 
     ["<A-V>"] = {
-      function()
-        require("nvterm.terminal").toggle "vertical"
-      end,
-      "Toggle vertical term",
+      '<cmd>ToggleTerm direction="vertical"<CR>',
+      "Toggle vertical terminal",
     },
   },
 }
