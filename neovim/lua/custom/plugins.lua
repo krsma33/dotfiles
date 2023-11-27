@@ -146,9 +146,13 @@ local plugins = {
     event = "VeryLazy",
   },
   {
-    -- Multiline cursor
-    "mg979/vim-visual-multi",
-    event = "VeryLazy",
+    -- Multiline cursors
+    "smoka7/multicursors.nvim",
+    dependencies = {
+      "smoka7/hydra.nvim",
+    },
+    opts = require("custom.configs.multicursors").opts,
+    cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
   },
 }
 

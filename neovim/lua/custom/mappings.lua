@@ -249,4 +249,52 @@ M.toggleterm = {
   },
 }
 
+M.multicursors = {
+  n = {
+    ["<S-m>"] = {
+      "<cmd>MCstart<CR>",
+      "Create a selection for selected text or word under the cursor",
+    },
+    ["<S-c>"] = {
+      "<cmd>MCunderCursor<CR>",
+      "Select the char under the cursor and start listening for the actions",
+    },
+    ["<ESC>"] = {
+      "<ESC><cmd>noh|MCclear<CR>",
+      "Clears all the selections",
+    },
+    ["<C-c>"] = {
+      "<ESC><cmd>noh|MCclear<CR>",
+      "Clears all the selections",
+    },
+    ["<C-?>"] = {
+      "<cmd>MCpattern<CR>",
+      "Prompts for a pattern and selects every match in the buffer",
+    },
+  },
+
+  v = {
+    ["<S-m>"] = {
+      "<cmd>MCstart<CR>",
+      "Create a selection for selected text or word under the cursor",
+    },
+    ["<S-c>"] = {
+      "<cmd>MCunderCursor<CR>",
+      "Select the char under the cursor and start listening for the actions",
+    },
+    ["<ESC>"] = {
+      "<ESC><cmd>noh|MCclear<CR>",
+      "Clears all the selections",
+    },
+    ["<C-c>"] = {
+      "<ESC><cmd>noh|Cclear<CR>",
+      "Clears all the selections",
+    },
+    ["<C-?>"] = {
+      "<cmd>MCvisualPattern<CR>",
+      "Prompts for a pattern and selects every match in the visual selection",
+    },
+  },
+}
+
 return M

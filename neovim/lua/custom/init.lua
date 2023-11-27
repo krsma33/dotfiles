@@ -3,6 +3,7 @@ local opt = vim.opt
 opt.relativenumber = true
 
 vim.cmd [[
+  set noignorecase
   set noshellslash
   set shell=pwsh
   set shellcmdflag=-command
