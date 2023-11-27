@@ -145,6 +145,11 @@ local plugins = {
     config = true,
     event = "VeryLazy",
   },
+  {
+    -- Multiline cursor
+    "mg979/vim-visual-multi",
+    event = "VeryLazy",
+  },
 }
 
 return plugins
