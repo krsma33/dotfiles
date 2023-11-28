@@ -269,14 +269,6 @@ M.multicursors = {
       "<cmd>MCunderCursor<CR>",
       "Select the char under the cursor and start listening for the actions",
     },
-    ["<ESC>"] = {
-      "<ESC><cmd>noh|MCclear<CR>",
-      "Clears all the selections",
-    },
-    ["<C-c>"] = {
-      "<ESC><cmd>noh|MCclear<CR>",
-      "Clears all the selections",
-    },
     ["<C-?>"] = {
       "<cmd>MCpattern<CR>",
       "Prompts for a pattern and selects every match in the buffer",
@@ -291,14 +283,6 @@ M.multicursors = {
     ["<S-c>"] = {
       "<cmd>MCunderCursor<CR>",
       "Select the char under the cursor and start listening for the actions",
-    },
-    ["<ESC>"] = {
-      "<ESC><cmd>noh|MCclear<CR>",
-      "Clears all the selections",
-    },
-    ["<C-c>"] = {
-      "<ESC><cmd>noh|Cclear<CR>",
-      "Clears all the selections",
     },
     ["<C-?>"] = {
       "<cmd>MCvisualPattern<CR>",

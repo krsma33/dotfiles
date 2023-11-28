@@ -148,7 +148,9 @@ local plugins = {
     dependencies = {
       "smoka7/hydra.nvim",
     },
-    opts = require("custom.configs.multicursors").opts,
+    config = function()
+      require("custom.configs.multicursors").setup()
+    end,
     cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
   },
 }
