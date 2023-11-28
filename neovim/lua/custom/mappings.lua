@@ -40,6 +40,12 @@ M.general = {
       end,
       "Toggle comment",
     },
+    ["<leader>fm"] = {
+      function()
+        require("conform").format { async = true, lsp_fallback = true }
+      end,
+      "Conform formatting, falling back to LSP formatting if conform not configured",
+    },
   },
 
   v = {
