@@ -18,4 +18,9 @@ M.setup = function()
   }
 end
 
+function M.set_highlights()
+  vim.api.nvim_set_hl(0, "MultiCursor", { fg = "#ffffcc", default = true })
+  vim.api.nvim_set_hl(0, "MultiCursorMain", { fg = "#ffbb99", default = true })
+end
+
 return M

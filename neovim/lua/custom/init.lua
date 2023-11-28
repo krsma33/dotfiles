@@ -16,3 +16,5 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "qf" },
   command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]],
 })
+
+require("custom.configs.multicursors").set_highlights()
