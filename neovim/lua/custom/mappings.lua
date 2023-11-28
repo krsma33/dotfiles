@@ -64,6 +64,10 @@ M.general = {
       "<ESC>",
       "Exit insert mode",
     },
+    ["<C-s>"] = {
+      "<cmd> w <CR>",
+      "Save file",
+    },
   },
 }
 

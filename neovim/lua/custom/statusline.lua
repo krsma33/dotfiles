@@ -21,6 +21,8 @@ M.override_statusline = function(modules)
     (function()
       if is_active() then
         return "%#St_pos_text# " .. get_name()
+      else
+        return ""
       end
     end)()
   )
