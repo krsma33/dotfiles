@@ -6,6 +6,7 @@
   - [Scoop](#scoop)
   - [Oh my posh](#oh-my-posh)
   - [PowerShell](#powershell)
+  - [Rancher Desktop](#rancher-desktop)
   - [Windows Terminal](#windows-terminal)
   - [Helix](#helix)
     - [Rust](#rust)
@@ -49,6 +50,12 @@ Modify newly created file by appending **oh-my-posh init pwsh --config "$env:POS
 PowerShell is the .NET Core version of PowerShell (compared to WindowsPowerShell which runs on .NET Framework)
 
     scoop install main/pwsh
+
+## Rancher Desktop
+
+Rancher desktop is used to locally work with k8s and docker. It's good open source replacement for Docker Desktop.
+
+    scoop install extras/rancher-desktop
 
 ## Windows Terminal
 
