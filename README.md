@@ -125,6 +125,8 @@ Text editor which can be used as IDE with a lot of configuration, but more matur
     scoop install main/make
     scoop install main/mingw
     scoop install main/ripgrep
+    scoop install main/python
+    scoop install nodejs-lts
 
 For initial setup we use NvChad distro
 
