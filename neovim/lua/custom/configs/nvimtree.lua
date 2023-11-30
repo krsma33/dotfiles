@@ -7,10 +7,7 @@ M.opts = {
   filters = {
     git_ignored = true,
     dotfiles = true,
-    -- custom = {
-    --   "bin",
-    --   "obj",
-    -- },
+    custom = {},
     exclude = {
       vim.fn.stdpath "config" .. "\\lua\\custom",
       ".gitignore",
