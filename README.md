@@ -135,15 +135,21 @@ Text editor which can be used as IDE with a lot of configuration, but more matur
     scoop install main/python
     scoop install nodejs-lts
 
-For initial setup we use NvChad distro
+For initial setup we use LazyVim
 
-    git clone https://github.com/NvChad/NvChad $HOME\AppData\Local\nvim --depth 1 && nvim
+    git clone https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim
 
 Copy configuration files form **neovim** directory
 
 Open neovim and wait for Lazy to install the plugins, after which quit neovim and reopen
 
     neovim
+
+### Rust
+
+Install better test runner
+    
+    cargo install cargo-nextest --locked
 
 ## Microsoft PowerToys
 
