@@ -3,6 +3,9 @@ return {
   init = function()
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
 
+    -- Disable Default Keys
+    keys[#keys + 1] = { "<C-k>", false, mode = "i" }
+
     -- Code action
     keys[#keys + 1] = {
       "<C-.>",
