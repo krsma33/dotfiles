@@ -62,4 +62,9 @@ return {
       has = "signatureHelp",
     }
   end,
+  opts = {
+    servers = {
+      omnisharp = require("plugins.lsp.omnisharp"),
+    },
+  },
 }

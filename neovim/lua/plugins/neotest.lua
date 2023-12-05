@@ -1,5 +1,26 @@
+local path = require("utils.path")
+
 return {
   { "Issafalcon/neotest-dotnet" },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "mason.nvim",
+    },
+    opts = function()
+      local mason_registry = require("mason-registry")
+      local netcoredbg = mason_registry.get_package("netcoredbg")
+      local netcoredbg_path = path.combine(netcoredbg:get_install_path(), "netcoredbg", "netcoredbg.exe")
+      require("dap").adapters.netcoredbg = {
+        type = "executable",
+        command = netcoredbg_path,
+        args = { "--interpreter=vscode" },
+        options = {
+          detached = false,
+        },
+      }
+    end,
+  },
   {
     "nvim-neotest/neotest",
     dependencies = {
