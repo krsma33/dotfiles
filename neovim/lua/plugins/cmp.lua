@@ -21,7 +21,7 @@ return {
         else
           fallback()
         end
-      end, { "i", "s", "c" }),
+      end, { "i", "s" }),
       ["<S-Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.confirm({ select = true })
@@ -30,7 +30,7 @@ return {
         else
           fallback()
         end
-      end, { "i", "s", "c" }),
+      end, { "i", "s" }),
     })
 
     opts.sorting = {
