@@ -1,18 +1,22 @@
 return {
   {
-    "tokyonight.nvim",
+    "folke/tokyonight.nvim",
     opts = {
       transparent = true,
+      style = "storm",
       styles = {
         sidebars = "transparent",
         floats = "transparent",
       },
+      -- on_colors = function(colors)
+      --   colors.border = colors.comment
+      -- end,
     },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-storm",
+      colorscheme = "tokyonight",
       icons = {
         misc = {
           dots = "󰇘",
