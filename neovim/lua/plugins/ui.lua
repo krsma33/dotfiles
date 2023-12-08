@@ -53,7 +53,7 @@ return {
           Enum = " ",
           EnumMember = " ",
           Event = " ",
-          Field = "󰇽 ",
+          Field = " ",
           File = "󰈙 ",
           Folder = "󰉋 ",
           Function = "󰊕 ",
@@ -68,7 +68,7 @@ return {
           Object = " ",
           Operator = "󰆕 ",
           Package = " ",
-          Property = "󰜢 ",
+          Property = " ",
           Reference = " ",
           Snippet = " ",
           String = " ",
@@ -78,7 +78,7 @@ return {
           TypeParameter = "󰅲 ",
           Unit = " ",
           Value = "󰎠 ",
-          Variable = "󰂡 ",
+          Variable = "󰫧 ",
         },
       },
     },
@@ -87,13 +87,6 @@ return {
     "folke/edgy.nvim",
     event = "VeryLazy",
     keys = {
-      {
-        "<C-B>",
-        function()
-          require("edgy").toggle()
-        end,
-        desc = "Edgy Toggle",
-      },
       {
         "<C-S-b>",
         function()
@@ -121,7 +114,7 @@ return {
           },
           {
             ft = "lazyterm",
-            title = "LazyTerm",
+            title = "Terminal",
             size = { height = 0.3 },
             filter = function(buf)
               return not vim.b[buf].lazyterm_cmd
@@ -157,9 +150,13 @@ return {
             open = function()
               vim.api.nvim_input("<esc><space>e")
             end,
-            size = { height = 0.6, width = 45 },
+            size = { height = 0.5, width = 50 },
           },
-          { title = "Neotest Summary", ft = "neotest-summary", size = { width = 45 } },
+          {
+            title = "Neotest Summary",
+            ft = "neotest-summary",
+            size = { width = 50 },
+          },
           {
             title = "Neo-Tree Git",
             ft = "neo-tree",
@@ -178,7 +175,7 @@ return {
             end,
             pinned = true,
             open = "Neotree position=top buffers",
-            size = { width = 45 },
+            size = { width = 50 },
           },
           "neo-tree",
         },
@@ -199,6 +196,9 @@ return {
           ["<c-Down>"] = function(win)
             win:resize("height", -2)
           end,
+        },
+        animate = {
+          enabled = false,
         },
       }
       return opts
