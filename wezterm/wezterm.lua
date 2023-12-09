@@ -193,20 +193,6 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = act.DisableDefaultAssignment,
 	},
-	{
-		key = "F11",
-		mods = "",
-		action = act.ToggleFullScreen,
-	},
-	{
-		key = "i",
-		mods = "CTRL",
-		action = act.ActivateKeyTable({
-			name = "vim",
-			one_shot = false,
-			replace_current = true,
-		}),
-	},
 }
 
 config.mouse_bindings = {
@@ -214,44 +200,6 @@ config.mouse_bindings = {
 		event = { Down = { streak = 1, button = "Right" } },
 		mods = "NONE",
 		action = act.PasteFrom("PrimarySelection"),
-	},
-}
-
-config.key_tables = {
-	vim = {
-		{
-			key = "h",
-			mods = "CTRL",
-			action = act.SendKey({ key = "LeftArrow" }),
-		},
-		{
-			key = "j",
-			mods = "CTRL",
-			action = act.SendKey({ key = "DownArrow" }),
-		},
-		{
-			key = "k",
-			mods = "CTRL",
-			action = act.SendKey({ key = "UpArrow" }),
-		},
-		{
-			key = "l",
-			mods = "CTRL",
-			action = act.SendKey({ key = "RightArrow" }),
-		},
-		{
-			key = "b",
-			mods = "CTRL",
-			action = act.SendKey({ key = "Home" }),
-		},
-		{
-			key = "e",
-			mods = "CTRL",
-			action = act.SendKey({ key = "End" }),
-		},
-
-		-- Cancel the mode by pressing escape
-		{ key = "Escape", action = "PopKeyTable" },
 	},
 }
 
