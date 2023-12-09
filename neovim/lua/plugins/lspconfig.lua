@@ -63,7 +63,7 @@ return {
     }
   end,
   opts = {
-    inlay_hints = { enabled = true },
+    inlay_hints = { enabled = false },
     servers = {
       omnisharp = require("plugins.lsp.omnisharp"),
     },

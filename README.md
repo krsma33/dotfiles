@@ -151,6 +151,29 @@ Install better test runner
 
     cargo install cargo-nextest --locked
 
+### C# Setup
+
+To configure omnisharp inlay hints create **%UserProfile%/.omnisharp/omnisharp.json** and add following:
+
+    {
+    "roslynExtensionsOptions": {
+        "inlayHintsOptions": {
+            "enableForParameters": true,
+            "forLiteralParameters": true,
+            "forIndexerParameters": true,
+            "forObjectCreationParameters": true,
+            "forOtherParameters": true,
+            "suppressForParametersThatDifferOnlyBySuffix": false,
+            "suppressForParametersThatMatchMethodIntent": false,
+            "suppressForParametersThatMatchArgumentName": false,
+            "enableForTypes": true,
+            "forImplicitVariableTypes": true,
+            "forLambdaParameterTypes": true,
+            "forImplicitObjectCreation": true
+        }
+      }
+    }
+
 ## Microsoft PowerToys
 
 [Microsoft PowerToys](https://apps.microsoft.com/store/detail/microsoft-powertoys/XP89DCGQ3K6VLD) add a lot of nice functionalities to windows.
