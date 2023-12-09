@@ -1,7 +1,6 @@
 # Configurations
 
 <!--toc:start-->
-
 - [Configurations](#configurations)
   - [Scoop](#scoop)
   - [Oh my posh](#oh-my-posh)
@@ -17,9 +16,10 @@
   - [Lazygit](#lazygit)
   - [Wezterm](#wezterm)
   - [NeoVim](#neovim)
+    - [Rust Setup](#rust-setup)
   - [Microsoft PowerToys](#microsoft-powertoys)
   - [Visual Studio 2022](#visual-studio-2022)
-  <!--toc:end-->
+<!--toc:end-->
 
 ## Scoop
 
@@ -145,10 +145,10 @@ Open neovim and wait for Lazy to install the plugins, after which quit neovim an
 
     neovim
 
-### Rust
+### Rust Setup
 
 Install better test runner
-    
+
     cargo install cargo-nextest --locked
 
 ## Microsoft PowerToys
