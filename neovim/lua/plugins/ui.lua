@@ -8,15 +8,31 @@ return {
         sidebars = "transparent",
         floats = "transparent",
       },
-      -- on_colors = function(colors)
-      --   colors.border = colors.comment
-      -- end,
+    },
+  },
+  {
+    "catppuccin",
+    opts = {
+      transparent_background = true,
+    },
+  },
+  {
+    "daschw/leaf.nvim",
+    opts = {
+      transparent = true,
+      contrast = "low",
+      overrides = {
+        NormalFloat = { bg = "none" },
+        FloatBorder = { bg = "none" },
+        Separator = { bg = "none" },
+        TabLineFill = { bg = "none" },
+      },
     },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "leaf",
       icons = {
         misc = {
           dots = "󰇘",
@@ -165,7 +181,7 @@ return {
             end,
             pinned = true,
             open = "Neotree position=right git_status",
-            size = { width = 45 },
+            size = { width = 50 },
           },
           {
             title = "Neo-Tree Buffers",

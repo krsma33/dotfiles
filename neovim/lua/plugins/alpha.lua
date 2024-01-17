@@ -46,5 +46,12 @@ return {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     ]]
     opts.section.header.val = vim.split(logo_side, "\n", { trimempty = true })
+    opts.section.header.opts.hl = "Identifier"
+    opts.section.footer.opts.hl = "Identifier"
+    opts.section.buttons.opts.hl = "Identifier"
+    for _, button in ipairs(opts.section.buttons.val) do
+      button.opts.hl = "Function"
+      button.opts.hl_shortcut = "Keyword"
+    end
   end,
 }
