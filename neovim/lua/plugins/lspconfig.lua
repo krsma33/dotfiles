@@ -63,9 +63,18 @@ return {
     }
   end,
   opts = {
-    inlay_hints = { enabled = false },
+    inlay_hints = { enabled = true },
     servers = {
       omnisharp = require("plugins.lsp.omnisharp"),
+      yamlls = {
+        settings = {
+          yaml = {
+            schemas = {
+              kubernetes = { "*.yaml", "*.yml" },
+            },
+          },
+        },
+      },
     },
   },
 }
