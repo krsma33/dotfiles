@@ -32,5 +32,19 @@ return {
         end
       end, { "i", "s" }),
     })
+
+    opts.formatting = {
+      fields = { "kind", "abbr", "menu" },
+      format = function(_, item)
+        local icons = require("lazyvim.config").icons.kinds
+        if icons[item.kind] then
+          item.menu = " <" .. item.kind .. ">"
+          item.menu_hl_group = "Special"
+          item.kind = icons[item.kind]
+        end
+
+        return item
+      end,
+    }
   end,
 }
