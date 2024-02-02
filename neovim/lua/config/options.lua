@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.api.nvim_set_hl(0, "FlashLabelCustom", { bg = "#700060", fg = "#c8d3f5" })
+vim.api.nvim_set_hl(0, "CmpDocumentationCustom", { bg = "#1E1B1F" })

@@ -33,13 +33,23 @@ return {
       end, { "i", "s" }),
     })
 
+    opts.window = {
+      completion = {
+        col_offset = 0,
+        side_padding = 1,
+      },
+      documentation = {
+        winhighlight = "Normal:CmpDocumentationCustom,FloatBorder:CmpDocumentationCustom",
+      },
+    }
+
     opts.formatting = {
       fields = { "kind", "abbr", "menu" },
       format = function(_, item)
         local icons = require("lazyvim.config").icons.kinds
         if icons[item.kind] then
-          item.menu = " <" .. item.kind .. ">"
-          item.menu_hl_group = "Special"
+          item.menu = " " .. item.kind .. ""
+          item.menu_hl_group = "Identifier"
           item.kind = icons[item.kind]
         end
 
