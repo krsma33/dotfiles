@@ -156,7 +156,8 @@ config.colors = {
 	},
 }
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
+config.window_background_image = wezterm.config_dir .. "\\background\\abstr-blur-dark.png"
 
 config.allow_win32_input_mode = false
 
