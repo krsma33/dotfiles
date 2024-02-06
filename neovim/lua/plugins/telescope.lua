@@ -4,8 +4,8 @@ return {
     defaults = {
       sorting_strategy = "ascending",
       layout_config = {
-        preview_width = 0.45,
         horizontal = {
+          preview_width = 0.45,
           prompt_position = "top",
         },
       },
