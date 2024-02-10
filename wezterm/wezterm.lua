@@ -2,6 +2,7 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
+local path_separator = package.config:sub(1, 1)
 
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
@@ -157,14 +158,18 @@ config.colors = {
 }
 
 config.window_background_opacity = 0.95
-config.window_background_image = wezterm.config_dir .. "\\background\\abstr-blur-darker.png"
+config.window_background_image = wezterm.config_dir
+	.. path_separator
+	.. "background"
+	.. path_separator
+	.. "abstr-blur-darker.png"
 
 config.allow_win32_input_mode = false
 
 local active_table_name = ""
 
 -- Show which key table is active in the status area
-wezterm.on("update-right-status", function(window, pane)
+wezterm.on("update-right-status", function(window, _)
 	active_table_name = window:active_key_table()
 	if active_table_name == "copy_mode" then
 		active_table_name = ""
@@ -174,7 +179,7 @@ wezterm.on("update-right-status", function(window, pane)
 	window:set_right_status(active_table_name or "")
 end)
 
-wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
+wezterm.on("format-window-title", function(tab, _, tabs, _, _)
 	local index = ""
 	if #tabs > 1 then
 		index = string.format("[%d/%d] ", tab.tab_index + 1, #tabs)
