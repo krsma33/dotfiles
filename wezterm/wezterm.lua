@@ -13,7 +13,11 @@ end
 config.initial_cols = 110
 config.initial_rows = 35
 
-config.default_prog = { "pwsh" }
+if path_separator == "/" then
+	config.default_prog = { "zsh" }
+else
+	config.default_prog = { "pwsh" }
+end
 
 config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
 config.font_size = 13
