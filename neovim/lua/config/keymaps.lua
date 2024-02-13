@@ -15,15 +15,15 @@ map("n", "<F2>", "q", { noremap = true, silent = true })
 
 map({ "n", "v" }, "q", "<nop>", { silent = true })
 
--- if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint.enable then -- Wait for neovim 0.10 to become stable
---   map("n", "<leader>L", function()
---     if vim.lsp.inlay_hint.is_enabled() then
---       vim.lsp.inlay_hint.enable(0, false)
---     else
---       vim.lsp.inlay_hint.enable()
---     end
---   end, { desc = "Toggle Inlay Hints" })
--- end
+if vim.lsp.inlay_hint.enable then -- Wait for neovim 0.10 to become stable
+  map("n", "<leader>L", function()
+    if vim.lsp.inlay_hint.is_enabled() then
+      vim.lsp.inlay_hint.enable(0, false)
+    else
+      vim.lsp.inlay_hint.enable()
+    end
+  end, { desc = "Toggle Inlay Hints" })
+end
 
 map("i", "<S-Tab>", "<BS>", { noremap = true, silent = true, desc = "Backspace" })
 map("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "Exit inster mode" })

@@ -2,6 +2,7 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+-- Enable code lens
 vim.api.nvim_create_autocmd({ "LspAttach", "BufEnter", "InsertLeave" }, {
   pattern = { "*.cs", "*.rs" },
   callback = function()
