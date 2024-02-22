@@ -5,7 +5,7 @@ return {
   },
   opts = function(_, opts)
     opts.open_files_do_not_replace_types = opts.open_files_do_not_replace_types
-      or { "terminal", "Trouble", "qf", "Outline", "trouble" }
+        or { "terminal", "Trouble", "qf", "Outline", "trouble" }
     table.insert(opts.open_files_do_not_replace_types, "edgy")
     opts.default_component_configs = {
       git_status = {
@@ -24,6 +24,14 @@ return {
         },
       },
     }
+
+    if require("utils.path").is_windows then
+      opts.filesystem = {
+        -- on windows recursive delete files crash the neovim
+        use_libuv_file_watcher = false,
+      }
+    end
+
     return opts
   end,
 }
