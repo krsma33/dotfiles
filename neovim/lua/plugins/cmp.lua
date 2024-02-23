@@ -31,7 +31,31 @@ return {
           fallback()
         end
       end, { "i", "s" }),
+      ["<CR>"] = cmp.config.disable,
     })
+
+    -- -- In case netive snippets are enabled
+    -- opts.mapping = vim.tbl_extend("force", opts.mapping, {
+    --   ["<Tab>"] = cmp.mapping(function(fallback)
+    --     if cmp.visible() then
+    --       cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace })
+    --     elseif vim.snippet.jumpable(1) then
+    --       vim.snippet.jump(1)
+    --     else
+    --       fallback()
+    --     end
+    --   end, { "i", "s" }),
+    --   ["<S-Tab>"] = cmp.mapping(function(fallback)
+    --     if cmp.visible() then
+    --       cmp.confirm({ select = true })
+    --     elseif vim.snippet.jumpable(-1) then
+    --       vim.snippet.jump(-1)
+    --     else
+    --       fallback()
+    --     end
+    --   end, { "i", "s" }),
+    --   ["<CR>"] = cmp.config.disable,
+    -- })
 
     opts.window = {
       completion = {

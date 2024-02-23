@@ -15,5 +15,11 @@ return {
         label = "FlashLabelCustom",
       },
     },
+    modes = {
+      -- disable regular search (use <c-s> to enable when needed)
+      search = {
+        enabled = false
+      }
+    },
   },
 }
