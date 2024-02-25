@@ -1,7 +1,11 @@
-# NeoVim 
+# NeoVim
 
 NeoVim text editor personal configuration
 
 ## Windows
 
-Copy **lua** folder to %appdata%\nvim
+Copy files and directories to %appdata%\nvim
+
+## Linux
+
+Copy files and directories to ~/.config/nvim

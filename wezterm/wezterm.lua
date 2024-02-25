@@ -3,6 +3,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
 local path_separator = package.config:sub(1, 1)
+local is_linux = path_separator == "/"
 
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
@@ -12,11 +13,23 @@ end
 
 config.initial_cols = 110
 config.initial_rows = 35
+config.term = "wezterm"
 
-if path_separator == "/" then
+config.ssh_domains = wezterm.default_ssh_domains()
+
+if is_linux then
 	config.default_prog = { "zsh" }
 else
 	config.default_prog = { "pwsh" }
+	table.insert(config.ssh_domains, {
+		name = "SSH:wsl-arch",
+		remote_address = "localhost:2222",
+		username = "krsma",
+		ssh_option = {
+			identityfile = wezterm.home_dir .. path_separator .. ".ssh" .. path_separator .. "id_rsa",
+		},
+		multiplexing = "None",
+	})
 end
 
 config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
