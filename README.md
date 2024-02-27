@@ -29,6 +29,7 @@
     - [Zsh](#zsh)
     - [Yay Package Manager](#yay-package-manager)
     - [Enable SSH](#enable-ssh)
+    - [Oh my posh linux](#oh-my-posh-linux)
     - [Linux Text Editors](#linux-text-editors)
       - [NeoVim-nightly](#neovim-nightly)
     - [Linux Terminals](#linux-terminals)
@@ -338,6 +339,30 @@ Reboot
 
     sudo reboot
 
+### Oh my posh linux
+
+Install oh-my-posh
+
+    yay -S oh-my-posh
+
+Edit ~/.zshrc
+
+    sudo nano ~/.zshrc
+
+Add theme
+
+    eval "$(oh-my-posh init zsh --config ~/multiverse-neon.omp.json)"
+
+Create theme file
+
+    sudo nano ~/multiverse-neon.omp.json
+
+Copy and paste theme from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/multiverse-neon.omp.json)
+
+Refresh zsh
+
+    exec zsh
+
 ### Linux Text Editors
 
 #### NeoVim-nightly
@@ -369,6 +394,12 @@ Terminal written in Rust
 
    yay -S wezterm
    yay -S wezterm-terminfo
+
+Add TERM=wezterm to /etc/environment
+
+   sudo nvim /etc/environment
+
+Add TERM=wezterm and save
 
 ### Dotnet
 
