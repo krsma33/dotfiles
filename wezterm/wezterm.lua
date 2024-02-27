@@ -13,7 +13,6 @@ end
 
 config.initial_cols = 110
 config.initial_rows = 35
-config.term = "wezterm"
 
 config.ssh_domains = wezterm.default_ssh_domains()
 
