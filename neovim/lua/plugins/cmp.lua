@@ -31,7 +31,6 @@ return {
           fallback()
         end
       end, { "i", "s" }),
-      ["<CR>"] = cmp.config.disable,
     })
 
     -- -- In case netive snippets are enabled

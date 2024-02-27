@@ -17,15 +17,15 @@ map({ "n", "v" }, "q", "<nop>", { silent = true })
 
 -- neovim >= 0.10
 if not (vim.version().major == 0 and vim.version().minor < 10) then
-	if vim.lsp.inlay_hint.enable then
-		map("n", "<leader>L", function()
-			if vim.lsp.inlay_hint.is_enabled() then
-				vim.lsp.inlay_hint.enable(0, false)
-			else
-				vim.lsp.inlay_hint.enable()
-			end
-		end, { desc = "Toggle Inlay Hints" })
-	end
+  if vim.lsp.inlay_hint.enable then
+    map("n", "<leader>L", function()
+      if vim.lsp.inlay_hint.is_enabled() then
+        vim.lsp.inlay_hint.enable(0, false)
+      else
+        vim.lsp.inlay_hint.enable()
+      end
+    end, { desc = "Toggle Inlay Hints" })
+  end
 end
 
 map("i", "<S-Tab>", "<BS>", { noremap = true, silent = true, desc = "Backspace" })
