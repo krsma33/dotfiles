@@ -28,6 +28,7 @@ else
 			identityfile = wezterm.home_dir .. path_separator .. ".ssh" .. path_separator .. "id_rsa",
 		},
 		multiplexing = "None",
+		default_prog = { "zsh" },
 	})
 end
 

@@ -25,7 +25,7 @@
   - [WSL2](#wsl2)
     - [Install](#install)
     - [Map to drive](#map-to-drive)
-  - [Linux Arch](#linux-arch)
+  - [Linux Arch / Manjaro](#linux-arch-manjaro)
     - [Zsh](#zsh)
     - [Yay Package Manager](#yay-package-manager)
     - [Enable SSH](#enable-ssh)
@@ -35,6 +35,9 @@
     - [Linux Terminals](#linux-terminals)
       - [Wezterm terminal](#wezterm-terminal)
     - [Dotnet](#dotnet)
+    - [Lazygit CLI](#lazygit-cli)
+    - [Docker](#docker)
+    - [Kubectl](#kubectl)
 <!--toc:end-->
 
 ## Windows
@@ -253,7 +256,7 @@ In windows explorer right click on **This PC** (or **Network**) tab and select *
 Select drive letter and in folder type **\\wsl$\Arch**  
 Select Finish
 
-## Linux Arch
+## Linux Arch / Manjaro
 
 ### Zsh
 
@@ -349,15 +352,11 @@ Edit ~/.zshrc
 
     sudo nano ~/.zshrc
 
+Copy and paste **./oh_my_posh_themes** directory to **~** (or [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
+
 Add theme
 
-    eval "$(oh-my-posh init zsh --config ~/multiverse-neon.omp.json)"
-
-Create theme file
-
-    sudo nano ~/multiverse-neon.omp.json
-
-Copy and paste theme from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/multiverse-neon.omp.json)
+    eval "$(oh-my-posh init zsh --config ~/oh_my_posh_themes/multiverse-neon-custom.omp.json)"
 
 Refresh zsh
 
@@ -392,12 +391,12 @@ Open neovim and wait for Lazy to install the plugins, after which quit neovim an
 
 Terminal written in Rust
 
-   yay -S wezterm
-   yay -S wezterm-terminfo
+    yay -S wezterm
+    yay -S wezterm-terminfo
 
 Add TERM=wezterm to /etc/environment
 
-   sudo nvim /etc/environment
+    sudo nvim /etc/environment
 
 Add TERM=wezterm and save
 
@@ -405,4 +404,22 @@ Add TERM=wezterm and save
 
 Install latest dotnet
 
-   yay -S dotnet-sdk
+    yay -S dotnet-sdk
+
+### Lazygit CLI
+
+Install lazygit
+
+    yay -S lazygit
+
+### Docker
+
+Instal docker
+
+    yay -S docker
+
+### Kubectl
+
+Install kubectl
+
+    yay -S kubectl
