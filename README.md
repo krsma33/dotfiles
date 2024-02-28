@@ -250,9 +250,28 @@ Add/modify following under [boot]. Start ssh server on boot
 
     command="/usr/bin/sshd"
 
+### Wslu
+
+Wslu is a collection of utilities for WSL.
+The reason for installing is mainly for **wslview** which allows opening Windows
+explorer or browsr from WSL.
+
+Installation guide can be found at:
+
+    https://wslutiliti.es/wslu/install.html
+
+Set environment variable of default browser:
+
+    sudo nvim /etc/environment
+
+Add following line:
+
+    BROWSER=explorer
+
 ### Map to drive
 
-In windows explorer right click on **This PC** (or **Network**) tab and select **map network drive..**  
+In windows explorer right click on **This PC** (or **Network**) tab
+and select **map network drive..**  
 Select drive letter and in folder type **\\wsl$\Arch**  
 Select Finish
 
@@ -412,6 +431,10 @@ Install lazygit
 Instal docker
 
     yay -S docker
+
+Add user to docker group to avoid using sudo
+
+    sudo usermod -aG docker {username}
 
 ### Kubectl
 
