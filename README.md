@@ -225,11 +225,11 @@ Setup default user
 Set user password
 
     passwd {username}
-    exit
 
 Add user to sudoers
 
     sudo usermod -aG wheel {username}
+    exit
 
 Set default user
 
@@ -246,7 +246,7 @@ Initialize key ring
 
     sudo nano /etc/wsl.conf
 
-Add/modify following under [boot]
+Add/modify following under [boot]. Start ssh server on boot
 
     command="/usr/bin/sshd"
 
@@ -298,14 +298,13 @@ Arch doesn't have ssh pre installed
 
     yay -S openssh
 
-Allow login by removing nologin
-
-    sudo rm -rf /run/nologin
-
 Copy existing (generate and copy) %userprofile%/.ssh/id_rsa.pub key contents to ~/.ssh/authorized_keys
 
     mkdir -p ~/.ssh
-    nano authorized_keys
+    nano ~/.ssh/authorized_keys
+
+Copy id_rsa.pub key contents
+
     sudo chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 
 Generate host keys
@@ -330,10 +329,6 @@ Prepend following lines
     account [success=done default=ignore] pam_succeed_if.so quiet user ingroup wheel
     account required     pam_nologin.so
 
-Enable service
-
-    sudo systemctl enable sshd.service
-
 Start manually
 
     sudo /usr/bin/sshd
@@ -352,7 +347,7 @@ Edit ~/.zshrc
 
     sudo nano ~/.zshrc
 
-Copy and paste **./oh_my_posh_themes** directory to **~** (or [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
+Copy and paste **./oh_my_posh_themes** directory to **~** (or get from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
 
 Add theme
 
