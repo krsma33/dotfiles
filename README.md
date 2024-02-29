@@ -234,6 +234,11 @@ Add user to sudoers
 Set default user
 
     Arch.exe config --default-user {username}
+    wsl
+
+(Optional) If company certificate is required copy it to ~/cert.crt
+
+    sudo trust anchor --store ~/cert.crt
 
 Initialize key ring
 
@@ -246,27 +251,71 @@ Initialize key ring
 
     sudo nano /etc/wsl.conf
 
-Add/modify following under [boot]. Start ssh server on boot
+(Only needed if systemd is not working) Add/modify following under [boot].
+Start ssh server on boot
 
     command="/usr/bin/sshd"
 
+### Systemd using wsl-distrod
+
+(NOTE) Distrod may no lnger be necessary with WSL2 supporting systemd natively.
+
+To add systemd to existing WSL disto run following commands:
+
+    curl -L -O "https://raw.githubusercontent.com/nullpo-head/wsl-distrod/main/install.sh"
+    chmod +x install.sh
+    sudo ./install.sh install
+
+Enable distrod
+
+    sudo /opt/distrod/bin/distrod enable
+    exit
+
+Restart your distro
+
+    wsl --terminate Arch
+    wsl
+
 ### Wslu
 
-Wslu is a collection of utilities for WSL.
+Wslu is a collection of [Utilities for WSL](https://wslutiliti.es/wslu/install.html).
 The reason for installing is mainly for **wslview** which allows opening Windows
 explorer or browsr from WSL.
 
-Installation guide can be found at:
+Install wget and wslu
 
-    https://wslutiliti.es/wslu/install.html
+    sudo pacman -S wget
+
+Download WSL Utilities Package
+
+    wget https://pkg.wslutiliti.es/public.key
+    sudo pacman-key --add public.key
+
+Locally sign the key (if not signed)
+
+    sudo pacman-key --lsign-key 2D4C887EB08424F157151C493DD50AA7E055D853
+
+Modify **pacman.conf** to include the repository
+
+    sudo nano /etc/pacman.conf
+
+Add following
+
+    [wslutilities]
+    Server = https://pkg.wslutiliti.es/arch/
+
+Run cmds
+
+    sudo pacman -Sy
+    sudo pacman -S wslu
 
 Set environment variable of default browser:
 
-    sudo nvim /etc/environment
+    sudo nano /etc/environment
 
 Add following line:
 
-    BROWSER=explorer
+    BROWSER=wslview
 
 ### Map to drive
 
@@ -284,10 +333,6 @@ Select Finish
 ### Yay Package Manager
 
 Yay package manager is needed for installing packages from AUR repository.
-
-First refresh the package cache and update system
-
-    sudo pacman -Syu
 
 Install *base-devel* and *git*
 
@@ -307,11 +352,13 @@ Install yay
 
 Remove git repo
 
+    cd ..
     rm -r yay -f
 
 ### Enable SSH
 
-Whole reason for enabling ssh is to be able to have **undercurls** by using wezterm ssh instead of wsl directly (ConPty removes all underlines which is annoying)
+Whole reason for enabling ssh is to be able to have **undercurls** by using
+wezterm ssh instead of wsl directly (ConPty removes all underlines which is annoying)
 
 Arch doesn't have ssh pre installed
 
@@ -348,9 +395,9 @@ Prepend following lines
     account [success=done default=ignore] pam_succeed_if.so quiet user ingroup wheel
     account required     pam_nologin.so
 
-Start manually
+Enable sshd service to run on startup
 
-    sudo /usr/bin/sshd
+    sudo systemctl enable sshd
 
 Reboot
 
@@ -362,11 +409,11 @@ Install oh-my-posh
 
     yay -S oh-my-posh
 
+Copy and paste **./oh_my_posh_themes** directory to **~** (or get from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
+
 Edit ~/.zshrc
 
     sudo nano ~/.zshrc
-
-Copy and paste **./oh_my_posh_themes** directory to **~** (or get from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
 
 Add theme
 
@@ -435,6 +482,10 @@ Instal docker
 Add user to docker group to avoid using sudo
 
     sudo usermod -aG docker {username}
+
+Enable docker on startup
+
+    sudo systemctl enable docker
 
 ### Kubectl
 
