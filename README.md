@@ -24,20 +24,26 @@
     - [Lazygit](#lazygit)
   - [WSL2](#wsl2)
     - [Install](#install)
+    - [Systemd using wsl-distrod](#systemd-using-wsl-distrod)
+    - [Wslu](#wslu)
     - [Map to drive](#map-to-drive)
-  - [Linux Arch / Manjaro](#linux-arch-manjaro)
-    - [Zsh](#zsh)
+  - [Linux Arch/Manjaro](#linux-archmanjaro)
     - [Yay Package Manager](#yay-package-manager)
     - [Enable SSH](#enable-ssh)
     - [Oh my posh linux](#oh-my-posh-linux)
+    - [Syntax Highlighting](#syntax-highlighting)
     - [Linux Text Editors](#linux-text-editors)
       - [NeoVim-nightly](#neovim-nightly)
     - [Linux Terminals](#linux-terminals)
       - [Wezterm terminal](#wezterm-terminal)
-    - [Dotnet](#dotnet)
-    - [Lazygit CLI](#lazygit-cli)
-    - [Docker](#docker)
-    - [Kubectl](#kubectl)
+    - [Dev Tools](#dev-tools)
+      - [Lazygit CLI](#lazygit-cli)
+      - [Docker](#docker)
+      - [Kubectl](#kubectl)
+    - [Languages](#languages)
+      - [DotNet](#dotnet)
+      - [Java](#java)
+      - [Rust Lang](#rust-lang)
 <!--toc:end-->
 
 ## Windows
@@ -46,7 +52,7 @@
 
 Scoop is a package manager (like Chocolatey)
 
-    Set-ExecutionPolicy RemoteSigned -Scope CurrentUse # Optional: Needed to run a remote script the first time
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUse
     irm get.scoop.sh | iex
 
 ### Oh my posh
@@ -56,25 +62,30 @@ Oh my posh is used to customize prompt in your terminal
     scoop bucket add main
     scoop install main/oh-my-posh
 
-Download and install the nerd font. [Caskaydia Cove Nerd Font Complete](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip) looks nice.
+Download and install the nerd font.
+[Caskaydia Cove Nerd Font Complete](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip)
+looks nice.
 
 Init powershell profile
 
     New-Item -Path $PROFILE -Type File -Force
 
-Modify newly created file by appending **oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/multiverse-neon.omp.json" | Invoke-Expression**
+Modify newly created file by appending
+**oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/multiverse-neon.omp.json" | Invoke-Expression**
 
     notepad $PROFILE
 
 ### PowerShell
 
-PowerShell is the .NET Core version of PowerShell (compared to WindowsPowerShell which runs on .NET Framework)
+PowerShell is the .NET Core version of PowerShell
+(compared to WindowsPowerShell which runs on .NET Framework)
 
     scoop install main/pwsh
 
 ### Rancher Desktop
 
-Rancher desktop is used to locally work with k8s and docker. It's good open source replacement for Docker Desktop.
+Rancher desktop is used to locally work with k8s and docker.
+It's good open source replacement for Docker Desktop.
 
     scoop install extras/rancher-desktop
 
@@ -217,10 +228,14 @@ Set the root password
 
     passwd
 
+Install zsh
+
+    sudo pacman -S zsh
+
 Setup default user
 
     echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
-    useradd -m -G wheel -s /bin/bash {username} 
+    useradd -m -G wheel -s /bin/zsh {username}
 
 Set user password
 
@@ -258,8 +273,6 @@ Start ssh server on boot
 
 ### Systemd using wsl-distrod
 
-(NOTE) Distrod may no lnger be necessary with WSL2 supporting systemd natively.
-
 To add systemd to existing WSL disto run following commands:
 
     curl -L -O "https://raw.githubusercontent.com/nullpo-head/wsl-distrod/main/install.sh"
@@ -275,6 +288,10 @@ Restart your distro
 
     wsl --terminate Arch
     wsl
+
+Disable distrod (fall back to default wsl systemd)
+
+    sudo /opt/distrod/bin/distrod disable
 
 ### Wslu
 
@@ -311,11 +328,11 @@ Run cmds
 
 Set environment variable of default browser:
 
-    sudo nano /etc/environment
+    sudo nano ~/.zshrc
 
 Add following line:
 
-    BROWSER=wslview
+    export BROWSER=wslview
 
 ### Map to drive
 
@@ -324,11 +341,7 @@ and select **map network drive..**
 Select drive letter and in folder type **\\wsl$\Arch**  
 Select Finish
 
-## Linux Arch / Manjaro
-
-### Zsh
-
-    sudo pacman -S zsh
+## Linux Arch/Manjaro
 
 ### Yay Package Manager
 
@@ -409,6 +422,10 @@ Install oh-my-posh
 
     yay -S oh-my-posh
 
+Open zsh and perform initial configuration
+
+    zsh
+
 Copy and paste **./oh_my_posh_themes** directory to **~** (or get from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
 
 Edit ~/.zshrc
@@ -423,6 +440,24 @@ Refresh zsh
 
     exec zsh
 
+### Syntax Highlighting
+
+Install Fast Syntax Highlighting
+
+    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.config/fsh
+
+Activate the plugin
+
+    nano ~/.zshrc
+
+Add following line (must be last line)
+
+    source ~/.config/fsh/fast-syntax-highlighting.plugin.zsh
+
+Set theme
+
+    fast-theme sv-orple
+
 ### Linux Text Editors
 
 #### NeoVim-nightly
@@ -433,6 +468,7 @@ Install neovim-nightly and dependencies
     yay -S ripgrep
     yay -S python
     yay -S nodejs
+    yay -S npm
     yay -S unzip
 
 For initial setup we use LazyVim
@@ -440,11 +476,12 @@ For initial setup we use LazyVim
     git clone https://github.com/LazyVim/starter ~/.config/nvim
     rm -rf ~/.config/nvim/.git
 
-Copy configuration files form **neovim** directory to ~/.config/nvim
+Copy configuration files form **neovim** dir to ~/.config/nvim
 
-Open neovim and wait for Lazy to install the plugins, after which quit neovim and reopen
+Open neovim and wait for Lazy to install the plugins,
+after which quit neovim and reopen
 
-    neovim
+    nvim
 
 ### Linux Terminals
 
@@ -455,25 +492,21 @@ Terminal written in Rust
     yay -S wezterm
     yay -S wezterm-terminfo
 
-Add TERM=wezterm to /etc/environment
+Add TERM=wezterm to **zshrc**
 
-    sudo nvim /etc/environment
+    sudo nvim ~/.zshrc
 
 Add TERM=wezterm and save
 
-### Dotnet
+### Dev Tools
 
-Install latest dotnet
-
-    yay -S dotnet-sdk
-
-### Lazygit CLI
+#### Lazygit CLI
 
 Install lazygit
 
     yay -S lazygit
 
-### Docker
+#### Docker
 
 Instal docker
 
@@ -487,8 +520,36 @@ Enable docker on startup
 
     sudo systemctl enable docker
 
-### Kubectl
+#### Kubectl
 
 Install kubectl
 
     yay -S kubectl
+
+### Languages
+
+#### DotNet
+
+Install latest .NET SDK
+
+    yay -S dotnet-sdk
+
+#### Java
+
+Install latest Java SDK
+
+    yay -S jdk-openjdk
+
+Install spring boot CLI
+
+    yay -S spring-boot-cli
+
+#### Rust Lang
+
+Install latest rustup
+
+    yay -s rustup
+
+Setup cargo
+
+    rustup default stable
