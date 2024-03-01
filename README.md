@@ -544,6 +544,10 @@ Install spring boot CLI
 
     yay -S spring-boot-cli
 
+Install gradle
+
+    yay -S gradle
+
 #### Rust Lang
 
 Install latest rustup
