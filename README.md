@@ -212,21 +212,19 @@ Install WSL (will install Ubuntu distro by default)
 
     wsl --install
 
-Install Arch Linux distro
+Install Arch Linux distro from Windows Store
 
-    scoop install extras/archwsl
+    https://github.com/VSWSL/Arch-WSL
 
-Remove Ubuntu distro
+Press **open** button in the windows store and setup user and password
 
-    wsl --unregister Ubuntu
-
-Open wsl (if arch is not main distro type Arch.exe instead)
+Open **wsl** (if arch is not main distro type **arch** instead)
 
     wsl
 
 Set the root password
 
-    passwd
+    sudo passwd root
 
 Install zsh
 
@@ -234,22 +232,7 @@ Install zsh
 
 Setup default user
 
-    echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
-    useradd -m -G wheel -s /bin/zsh {username}
-
-Set user password
-
-    passwd {username}
-
-Add user to sudoers
-
-    sudo usermod -aG wheel {username}
-    exit
-
-Set default user
-
-    Arch.exe config --default-user {username}
-    wsl
+    sudo usermod -aG wheel -s /bin/zsh {username}
 
 (Optional) If company certificate is required copy it to ~/cert.crt
 
@@ -261,37 +244,6 @@ Initialize key ring
     sudo pacman-key --populate
     sudo pacman -Sy archlinux-keyring
     sudo pacman -Su
-
-(Optional) Edit wsl.config to run sshd on startup
-
-    sudo nano /etc/wsl.conf
-
-(Only needed if systemd is not working) Add/modify following under [boot].
-Start ssh server on boot
-
-    command="/usr/bin/sshd"
-
-### Systemd using wsl-distrod
-
-To add systemd to existing WSL disto run following commands:
-
-    curl -L -O "https://raw.githubusercontent.com/nullpo-head/wsl-distrod/main/install.sh"
-    chmod +x install.sh
-    sudo ./install.sh install
-
-Enable distrod
-
-    sudo /opt/distrod/bin/distrod enable
-    exit
-
-Restart your distro
-
-    wsl --terminate Arch
-    wsl
-
-Disable distrod (fall back to default wsl systemd)
-
-    sudo /opt/distrod/bin/distrod disable
 
 ### Wslu
 
