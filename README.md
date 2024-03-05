@@ -435,6 +435,28 @@ after which quit neovim and reopen
 
     nvim
 
+##### WSL clipboard
+
+To be able to use clipboard between neovim WSL instance and Windows some setup is needed
+In neovim **init.lua** or **lua/config/options.lua** configure clipboard
+
+    vim.opt.clipboard = "unnamedplus"
+
+On WSL instance install **win32yank**
+
+    yay -S win32yank-bin
+
+##### Linux clipboard
+
+To be able to use clipboard between neovim WSL instance and Windows some setup is needed
+In neovim **init.lua** or **lua/config/options.lua** configure clipboard
+
+    vim.opt.clipboard = "unnamedplus"
+
+On WSL instance install **xclip**
+
+    yay -S xclip
+
 ### Linux Terminals
 
 #### Wezterm terminal
