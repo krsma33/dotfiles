@@ -508,6 +508,16 @@ Install kubectl
 Install latest .NET SDK
 
     yay -S dotnet-sdk
+    yay -S aspnet-runtime
+
+Add DOTNET_ROOT to **zshrc**
+
+    sudo nvim ~/.zshrc
+
+Add following line
+
+    export DOTNET_ROOT=/opt/dotnet
+
 
 #### Java
 
