@@ -217,15 +217,25 @@ Install Arch Linux distro from Windows Store
 
     https://github.com/VSWSL/Arch-WSL
 
-Press **open** button in the windows store and setup user and password
+Start **arch** in **powershell** and setup user and password
 
-Open **wsl** (if arch is not main distro type **arch** instead)
+    arch
+
+Set arch as default wsl distro
+
+    wsl --set-default arch
+
+Open **wsl**
 
     wsl
 
 Set the root password
 
     sudo passwd root
+
+(Optional) If company certificate is required copy it to ~/cert.crt
+
+    sudo trust anchor --store ~/cert.crt
 
 Install zsh
 
@@ -234,10 +244,6 @@ Install zsh
 Setup default user
 
     sudo usermod -aG wheel -s /bin/zsh {username}
-
-(Optional) If company certificate is required copy it to ~/cert.crt
-
-    sudo trust anchor --store ~/cert.crt
 
 Initialize key ring
 
@@ -252,13 +258,9 @@ Wslu is a collection of [Utilities for WSL](https://wslutiliti.es/wslu/install.h
 The reason for installing is mainly for **wslview** which allows opening Windows
 explorer or browsr from WSL.
 
-Install wget and wslu
-
-    sudo pacman -S wget
-
 Download WSL Utilities Package
 
-    wget https://pkg.wslutiliti.es/public.key
+    curl https://pkg.wslutiliti.es/public.key >> public.key
     sudo pacman-key --add public.key
 
 Locally sign the key (if not signed)
@@ -295,6 +297,12 @@ Select drive letter and in folder type **\\wsl$\Arch**
 Select Finish
 
 ## Linux Arch/Manjaro
+
+### Zsh
+
+Install zsh
+
+    sudo pacman -S zsh
 
 ### Yay Package Manager
 
@@ -379,7 +387,7 @@ Open zsh and perform initial configuration
 
     zsh
 
-Copy and paste **./oh_my_posh_themes** directory to **~** (or get from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
+Copy and paste **./oh_my_posh_themes** directory to **~/.config/** (or get from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
 
 Edit ~/.zshrc
 
@@ -387,7 +395,7 @@ Edit ~/.zshrc
 
 Add theme
 
-    eval "$(oh-my-posh init zsh --config ~/oh_my_posh_themes/multiverse-neon-custom.omp.json)"
+    eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/multiverse-neon-custom.omp.json)"
 
 Refresh zsh
 
@@ -407,7 +415,7 @@ Add following line (must be last line)
 
     source ~/.config/fsh/fast-syntax-highlighting.plugin.zsh
 
-Set theme
+(Optional) Set theme
 
     fast-theme sv-orple
 
@@ -417,12 +425,7 @@ Set theme
 
 Install neovim-nightly and dependencies
 
-    yay -S neovim-git
-    yay -S ripgrep
-    yay -S python
-    yay -S nodejs
-    yay -S npm
-    yay -S unzip
+    yay -S neovim-git ripgrep python nodejs npm unzip
 
 For initial setup we use LazyVim
 
@@ -537,7 +540,7 @@ Install gradle
 
 Install latest rustup
 
-    yay -s rustup
+    yay -S rustup
 
 Setup cargo
 
