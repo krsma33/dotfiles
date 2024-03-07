@@ -8,7 +8,8 @@ vim.api.nvim_set_hl(0, "FlashLabelCustom", { bg = "#700060", fg = "#c8d3f5" })
 vim.api.nvim_set_hl(0, "CmpDocumentationCustom", { bg = "#1d1c1d" })
 
 if path.is_windows then
-  vim.opt.shell = "pwsh"
+	vim.opt.shell = "pwsh"
 else
-  vim.opt.shell = "zsh"
+	vim.opt.shell = "zsh"
+	vim.opt.clipboard = "unnamedplus"
 end
