@@ -515,6 +515,12 @@ Usage e.g.:
 - fzf
 - kubectl get pods -A --no-headers | fzf | awk '{print $2, $1}' | xargs -n 2 sh -c 'kubectl describe pod $0 -n $1'
 
+#### Neofetch
+
+Instal **neofetch**, a tool to display system information
+
+    yay -S neofetch
+
 #### Manuals
 
 Install manuals database for Linux commands
