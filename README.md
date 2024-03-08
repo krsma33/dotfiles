@@ -363,7 +363,7 @@ Activate the plugin
 
 Add following line above syntax highlighting plugin
 
-    source usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/key-bindings.zsh
 
 ### Yay Package Manager
 
