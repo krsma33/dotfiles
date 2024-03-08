@@ -27,10 +27,12 @@
     - [Wslu](#wslu)
     - [Map to drive](#map-to-drive)
   - [Linux Arch/Manjaro](#linux-archmanjaro)
+    - [Zsh](#zsh)
+      - [Oh my posh linux](#oh-my-posh-linux)
+      - [Syntax Highlighting](#syntax-highlighting)
+      - [Fzf keybindings](#fzf-keybindings)
     - [Yay Package Manager](#yay-package-manager)
     - [Enable SSH](#enable-ssh)
-    - [Oh my posh linux](#oh-my-posh-linux)
-    - [Syntax Highlighting](#syntax-highlighting)
     - [Linux Text Editors](#linux-text-editors)
       - [NeoVim-nightly](#neovim-nightly)
         - [WSL clipboard](#wsl-clipboard)
@@ -41,6 +43,11 @@
       - [Lazygit CLI](#lazygit-cli)
       - [Docker](#docker)
       - [Kubectl](#kubectl)
+      - [Fzf](#fzf)
+      - [Neofetch](#neofetch)
+      - [Manuals](#manuals)
+      - [Less](#less)
+      - [Sed](#sed)
     - [Languages](#languages)
       - [DotNet](#dotnet)
       - [Java](#java)
@@ -304,6 +311,60 @@ Install zsh
 
     sudo pacman -S zsh
 
+#### Oh my posh linux
+
+Install oh-my-posh
+
+    yay -S oh-my-posh
+
+Open zsh and perform initial configuration
+
+    zsh
+
+Copy and paste **./oh_my_posh_themes** directory to **~/.config/** (or get from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
+
+Edit ~/.zshrc
+
+    sudo nano ~/.zshrc
+
+Add theme
+
+    eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/multiverse-neon-custom.omp.json)"
+
+Refresh zsh
+
+    exec zsh
+
+#### Syntax Highlighting
+
+Install Fast Syntax Highlighting
+
+    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.config/fsh
+
+Activate the plugin
+
+    nano ~/.zshrc
+
+Add following line (must be last line)
+
+    source ~/.config/fsh/fast-syntax-highlighting.plugin.zsh
+
+(Optional) Set theme
+
+    fast-theme sv-orple
+
+#### Fzf keybindings
+
+To enable fzf history-search (CTRL+r) and fzf file-search (CTRL+t)
+
+Activate the plugin
+
+    nano ~/.zshrc
+
+Add following line above syntax highlighting plugin
+
+    source usr/share/fzf/key-bindings.zsh
+
 ### Yay Package Manager
 
 Yay package manager is needed for installing packages from AUR repository.
@@ -376,48 +437,6 @@ Enable sshd service to run on startup
 Reboot
 
     sudo reboot
-
-### Oh my posh linux
-
-Install oh-my-posh
-
-    yay -S oh-my-posh
-
-Open zsh and perform initial configuration
-
-    zsh
-
-Copy and paste **./oh_my_posh_themes** directory to **~/.config/** (or get from [github](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/))
-
-Edit ~/.zshrc
-
-    sudo nano ~/.zshrc
-
-Add theme
-
-    eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/multiverse-neon-custom.omp.json)"
-
-Refresh zsh
-
-    exec zsh
-
-### Syntax Highlighting
-
-Install Fast Syntax Highlighting
-
-    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.config/fsh
-
-Activate the plugin
-
-    nano ~/.zshrc
-
-Add following line (must be last line)
-
-    source ~/.config/fsh/fast-syntax-highlighting.plugin.zsh
-
-(Optional) Set theme
-
-    fast-theme sv-orple
 
 ### Linux Text Editors
 
@@ -561,7 +580,6 @@ Add DOTNET_ROOT to **zshrc**
 Add following line
 
     export DOTNET_ROOT=/opt/dotnet
-
 
 #### Java
 

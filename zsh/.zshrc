@@ -1,4 +1,4 @@
-# Flex
+# Show system info
 neofetch
 
 # If it's not running interactively, don't do anything
@@ -77,8 +77,11 @@ export DOTNET_ROOT=/opt/dotnet
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-# oh-my-posh
+# Oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/multiverse-neon-custom.omp.json)"
 
-# f-sy-h needs to be on last line
+# Fzf key bindings
+source usr/share/fzf/key-bindings.zsh
+
+# F-sy-h needs to be on last line
 source ~/.config/fsh/fast-syntax-highlighting.plugin.zsh
