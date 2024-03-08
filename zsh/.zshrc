@@ -44,8 +44,6 @@ bindkey -M menuselect 'up' vi-up-line-or-history
 bindkey -M menuselect 'right' vi-forward-char
 # Fix backspace in vim modes
 bindkey -v "^?" backward-delete-char
-# Ctrl-r to search history
-bindkey "^R" history-incremental-search-backward
 
 # Change cursor shape for different vi modes
 function zle-keymap-select {
