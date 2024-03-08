@@ -425,7 +425,7 @@ Add following line (must be last line)
 
 Install neovim-nightly and dependencies
 
-    yay -S neovim-git ripgrep python nodejs npm unzip
+    yay -S neovim-git ripgrep fd python nodejs npm unzip
 
 For initial setup we use LazyVim
 
@@ -500,9 +500,44 @@ Enable docker on startup
 
 #### Kubectl
 
-Install kubectl
+Install **kubectl**
 
     yay -S kubectl
+
+#### Fzf
+
+Install **fzf**
+
+    yay -S fzf
+
+Usage e.g.:
+
+- fzf
+- kubectl get pods -A --no-headers | fzf | awk '{print $2, $1}' | xargs -n 2 sh -c 'kubectl describe pod $0 -n $1'
+
+#### Manuals
+
+Install manuals database for Linux commands
+
+    yay -S man-db
+
+Usage e.g. **man touch** to get touch command docs
+
+#### Less
+
+Tool used for scrolling text in terminal
+
+    yay -S less
+
+Usage **less file.txt**
+
+#### Sed
+
+Install vim like search and replace text tool
+
+    yay -S sed
+
+Usage e.g. **sed 's/world/universe/' file.txt > file.txt**
 
 ### Languages
 
