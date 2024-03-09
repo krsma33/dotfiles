@@ -329,7 +329,7 @@ Edit ~/.zshrc
 
 Add theme
 
-    eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/multiverse-neon-custom.omp.json)"
+    eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/sonicboom-custom.omp.json)"
 
 Refresh zsh
 
