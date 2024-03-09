@@ -108,7 +108,7 @@
           "type": "java"
         },
         {
-          "foreground": "#00007d",
+          "foreground": "#4d4dff",
           "properties": {
             "display_mode": "files",
             "fetch_version": true
