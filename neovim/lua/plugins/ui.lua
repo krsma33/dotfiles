@@ -20,5 +20,22 @@ return {
     event = "VeryLazy",
     keys = require("plugins.ui.edgy").keys,
     opts = require("plugins.ui.edgy").opts,
-  }
+  },
+  {
+    "goolord/alpha-nvim",
+    opts = require("plugins.ui.alpha"),
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = require("plugins.ui.lualine"),
+  },
+  {
+    "folke/noice.nvim",
+    event = "VimEnter",
+    opts = require("plugins.ui.noice"),
+  },
+  {
+    "rcarriga/nvim-notify",
+    opts = require("plugins.ui.nvim-notify"),
+  },
 }

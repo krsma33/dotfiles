@@ -1,6 +1,4 @@
-return
-{
-  "echasnovski/mini.bufremove",
+return {
   keys = {
     {
       "<c-q>",
@@ -22,5 +20,5 @@ return
     },
     -- stylua: ignore
     { "<c-s-q>", function() require("mini.bufremove").delete(0, true) end, desc = "Delete Buffer (Force)" },
-  }
+  },
 }

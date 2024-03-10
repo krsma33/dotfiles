@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd({ "LspAttach" }, {
   end,
 })
 -- refresh code lens
-vim.api.nvim_create_autocmd({ "LspAttach", "BufEnter", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "BufRead", "BufWrite" }, {
   callback = function()
     local buf = tonumber(vim.fn.expand("<abuf>"))
     if buf then
