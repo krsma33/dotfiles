@@ -1,5 +1,6 @@
 return function(_, opts)
   local cmp = require("cmp")
+  local compare = require("cmp.config.compare")
   local luasnip = require("luasnip")
 
   opts.mapping = vim.tbl_extend("force", opts.mapping, {
@@ -45,6 +46,29 @@ return function(_, opts)
   --   end, { "i", "s" }),
   --   ["<CR>"] = cmp.config.disable,
   -- })
+
+  opts.sources = cmp.config.sources({
+    { name = "nvim_lsp", priority = 5 },
+    { name = "luasnip", priority = 4, keyword_length = 2 },
+    { name = "buffer", priority = 4 },
+    { name = "copilot", priority = 4, keyword_pattern = [[\%(\w\+\)]] }, -- Make copilot not trigger on special characters
+    { name = "path" },
+    { name = "cmdline" },
+  })
+
+  opts.sorting = {
+    priority_weight = 2,
+    comparators = {
+      compare.offset,
+      compare.exact,
+      compare.score,
+      compare.recently_used,
+      compare.locality,
+      compare.kind,
+      compare.length,
+      compare.order,
+    },
+  }
 
   opts.window = {
     completion = {
