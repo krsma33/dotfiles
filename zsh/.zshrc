@@ -33,6 +33,12 @@ export KEYTIMEOUT=1
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^v' edit-command-line
 
+# Bind ctrl-b to show list of choices
+bindkey '^B' list-choices
+# Bind ctrl-space to open menu
+bindkey -s '^@' '^B^I'
+# Bind tab to complete
+bindkey '^K' autosuggest-accept
 # Use vim keys in tab complete menu
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
@@ -76,10 +82,13 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # Oh-my-posh
-eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/multiverse-neon-custom.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/sonicboom-custom.omp.json)"
 
 # Fzf key bindings
 source /usr/share/fzf/key-bindings.zsh
+
+# Autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # F-sy-h needs to be on last line
 source ~/.config/fsh/fast-syntax-highlighting.plugin.zsh

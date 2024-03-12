@@ -31,6 +31,7 @@
       - [Oh my posh linux](#oh-my-posh-linux)
       - [Syntax Highlighting](#syntax-highlighting)
       - [Fzf keybindings](#fzf-keybindings)
+      - [Zsh-autosuggestions](#zsh-autosuggestions)
     - [Yay Package Manager](#yay-package-manager)
     - [Enable SSH](#enable-ssh)
     - [Linux Text Editors](#linux-text-editors)
@@ -364,6 +365,20 @@ Activate the plugin
 Add following line above syntax highlighting plugin
 
     source /usr/share/fzf/key-bindings.zsh
+
+#### Zsh-autosuggestions
+
+To install zsh autosuggestions plugin
+
+    yay -S zsh-autosuggestions
+
+Activate the plugin
+
+    nano ~/.zshrc
+
+Add following line above syntax highlighting plugin
+
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ### Yay Package Manager
 
