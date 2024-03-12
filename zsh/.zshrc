@@ -79,7 +79,7 @@ export EDITOR="$VISUAL"
 eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/multiverse-neon-custom.omp.json)"
 
 # Fzf key bindings
-source usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 # F-sy-h needs to be on last line
 source ~/.config/fsh/fast-syntax-highlighting.plugin.zsh

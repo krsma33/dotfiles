@@ -147,9 +147,8 @@
         {
           "background": "#333333",
           "foreground": "#3ec669",
-          "leading_diamond": "\ue0c5",
           "style": "diamond",
-          "template": "<transparent>/ </>{{ .HostName }}",
+          "template": "<transparent> / </>{{ .HostName }}",
           "type": "session"
         },
         {
