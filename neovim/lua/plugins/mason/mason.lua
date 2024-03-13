@@ -3,7 +3,6 @@ return function(_, opts)
     vim.list_extend(opts.ensure_installed, {
       "yamlfmt",
       "csharp-language-server",
-      "csharpier",
       "netcoredbg",
     })
   end

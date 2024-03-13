@@ -1,7 +1,6 @@
 return {
   formatters_by_ft = {
     yaml = { "yamlfmt" },
-    cs = { "csharpier" },
   },
   formatters = {
     yamlfmt = {
@@ -9,10 +8,6 @@ return {
         "-formatter",
         "indentless_arrays=true",
       },
-    },
-    csharpier = {
-      command = "dotnet-csharpier",
-      args = { "--write-stdout" },
     },
   },
 }

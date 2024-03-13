@@ -31,7 +31,7 @@ export KEYTIMEOUT=1
 
 # Edit line in vim buffer ctrl-v
 autoload edit-command-line; zle -N edit-command-line
-bindkey '^v' edit-command-line
+bindkey '^e' edit-command-line
 
 # Bind ctrl-b to show list of choices
 bindkey '^B' list-choices
@@ -78,9 +78,11 @@ preexec() { echo -ne '\e[5 q'; } # Use beam shape cursor for each new prompt.
 # Env variables
 export BROWSER=wslview
 export TERM=wezterm
-export DOTNET_ROOT=/opt/dotnet
+export DOTNET_ROOT=/usr/share/dotnet/
+export PATH=$PATH:$DOTNET_ROOT
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
 
 # Oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.config/oh_my_posh_themes/sonicboom-custom.omp.json)"
