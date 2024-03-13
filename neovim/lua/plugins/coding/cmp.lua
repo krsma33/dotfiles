@@ -51,7 +51,8 @@ return function(_, opts)
     { name = "nvim_lsp", priority = 5 },
     { name = "luasnip", priority = 4, keyword_length = 2 },
     { name = "buffer", priority = 4 },
-    { name = "copilot", priority = 4, keyword_pattern = [[\%(\w\+\)]] }, -- Make copilot not trigger on special characters
+    { name = "copilot", priority = 4, keyword_pattern = [[\%(\w\+\)]], keyword_length = 4 }, -- Make copilot not trigger on special characters
+    { name = "nvim_lsp_signature_help" },
     { name = "path" },
     { name = "cmdline" },
   })
