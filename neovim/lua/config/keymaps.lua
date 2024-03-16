@@ -34,3 +34,6 @@ map("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 map("i", "<C-j>", "<Down>", { noremap = true, silent = true })
 map("i", "<C-k>", "<Up>", { noremap = true, silent = true })
 map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
+
+map("x", "p", "P", { noremap = true, desc = "Paste without replacing yank register" })
+map("x", "P", "p", { noremap = true, desc = "Paste with replacing yank register with pasted over text" })
