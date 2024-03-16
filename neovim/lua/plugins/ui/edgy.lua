@@ -12,14 +12,14 @@ return {
     bottom = {
       {
         ft = "toggleterm",
-        size = { height = 0.3 },
+        size = { height = 0.35 },
         filter = function(_, win)
           return vim.api.nvim_win_get_config(win).relative == ""
         end,
       },
       {
         ft = "noice",
-        size = { height = 0.3 },
+        size = { height = 0.35 },
         filter = function(_, win)
           return vim.api.nvim_win_get_config(win).relative == ""
         end,
@@ -27,7 +27,7 @@ return {
       {
         ft = "lazyterm",
         title = "Terminal",
-        size = { height = 0.3 },
+        size = { height = 0.35 },
         filter = function(buf)
           return not vim.b[buf].lazyterm_cmd
         end,
@@ -40,7 +40,8 @@ return {
         end,
       },
       {
-        ft = "qf", title = "QuickFix"
+        ft = "qf",
+        title = "QuickFix",
       },
       {
         ft = "help",
@@ -53,12 +54,12 @@ return {
       {
         title = "Spectre",
         ft = "spectre_panel",
-        size = { height = 0.3 }
+        size = { height = 0.3 },
       },
       {
         title = "Neotest Output",
         ft = "neotest-output-panel",
-        size = { height = 15 }
+        size = { height = 15 },
       },
     },
     left = {
@@ -72,33 +73,33 @@ return {
         open = function()
           vim.api.nvim_input("<esc><space>e")
         end,
-        size = { height = 0.5, width = 50 },
+        size = { height = 0.5, width = 60 },
       },
       {
         title = "Neotest Summary",
         ft = "neotest-summary",
-        size = { width = 50 },
+        size = { width = 60 },
       },
-      {
-        title = "Neo-Tree Git",
-        ft = "neo-tree",
-        filter = function(buf)
-          return vim.b[buf].neo_tree_source == "git_status"
-        end,
-        pinned = true,
-        open = "Neotree position=right git_status",
-        size = { width = 50 },
-      },
-      {
-        title = "Neo-Tree Buffers",
-        ft = "neo-tree",
-        filter = function(buf)
-          return vim.b[buf].neo_tree_source == "buffers"
-        end,
-        pinned = true,
-        open = "Neotree position=top buffers",
-        size = { width = 50 },
-      },
+      -- {
+      --   title = "Neo-Tree Git",
+      --   ft = "neo-tree",
+      --   filter = function(buf)
+      --     return vim.b[buf].neo_tree_source == "git_status"
+      --   end,
+      --   pinned = true,
+      --   open = "Neotree position=right git_status",
+      --   size = { width = 50 },
+      -- },
+      -- {
+      --   title = "Neo-Tree Buffers",
+      --   ft = "neo-tree",
+      --   filter = function(buf)
+      --     return vim.b[buf].neo_tree_source == "buffers"
+      --   end,
+      --   pinned = true,
+      --   open = "Neotree position=top buffers",
+      --   size = { width = 50 },
+      -- },
       "neo-tree",
     },
     keys = {
@@ -122,5 +123,5 @@ return {
     animate = {
       enabled = false,
     },
-  }
+  },
 }
