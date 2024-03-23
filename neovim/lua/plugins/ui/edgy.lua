@@ -35,6 +35,7 @@ return {
       "Trouble",
       {
         ft = "trouble",
+        size = { height = 0.35 },
         filter = function(_, win)
           return vim.api.nvim_win_get_config(win).relative == ""
         end,
@@ -42,10 +43,11 @@ return {
       {
         ft = "qf",
         title = "QuickFix",
+        size = { height = 0.35 },
       },
       {
         ft = "help",
-        size = { height = 20 },
+        size = { height = 0.35 },
         -- don't open help files in edgy that we're editing
         filter = function(buf)
           return vim.bo[buf].buftype == "help"
@@ -54,12 +56,12 @@ return {
       {
         title = "Spectre",
         ft = "spectre_panel",
-        size = { height = 0.3 },
+        size = { height = 0.35 },
       },
       {
         title = "Neotest Output",
         ft = "neotest-output-panel",
-        size = { height = 15 },
+        size = { height = 0.35 },
       },
     },
     left = {

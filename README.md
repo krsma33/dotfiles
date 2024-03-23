@@ -495,6 +495,13 @@ On WSL instance install **xclip**
 
     yay -S xclip
 
+##### Roslyn Language Server
+
+To install latest DotNet language server, [Roslyn](https://github.com/jmederosalvarado/roslyn.nvim), few steps are needed (as it's not supported by usual nvim tooling):
+
+- Download [Roslyn Language Server](https://github.com/jmederosalvarado/roslyn.nvim/releases) from releases
+- Extract tar using: **tar zxf /path/to/roslyn.tar.gz -C ~/.local/share/nvim/roslyn**
+- Make sure that **roslyn_version** option matches the downloaded language server version (plugins/lsp/roslyn.lua)
 ### Linux Terminals
 
 #### Wezterm terminal
