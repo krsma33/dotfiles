@@ -6,6 +6,7 @@
     - [Scoop](#scoop)
     - [Oh my posh](#oh-my-posh)
     - [PowerShell](#powershell)
+      - [Fzf](#fzf)
     - [Rancher Desktop](#rancher-desktop)
     - [Microsoft PowerToys](#microsoft-powertoys)
     - [Visual Studio 2022](#visual-studio-2022)
@@ -92,6 +93,27 @@ PowerShell is the .NET Core version of PowerShell
 (compared to WindowsPowerShell which runs on .NET Framework)
 
     scoop install main/pwsh
+
+#### Fzf
+
+Install fuzzy finder for easier searching
+
+    scoop install fzf
+
+Install PSFzf wrapper for pwsh
+
+    scoop install PSFzf
+
+Edit powershell profile
+
+    nvim $PROFILE
+
+Add following to the profile
+
+    Import-Module PSFzf
+    Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' `
+                    -PSReadlineChordReverseHistory 'Ctrl+r'
+    Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
 
 ### Rancher Desktop
 
