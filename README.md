@@ -26,6 +26,7 @@
     - [Install](#install)
     - [Wslu](#wslu)
     - [Map to drive](#map-to-drive)
+    - [Start sshd on Windows startup](#start-sshd-on-windows-startup)
   - [Linux Arch/Manjaro](#linux-archmanjaro)
     - [Zsh](#zsh)
       - [Oh my posh linux](#oh-my-posh-linux)
@@ -38,6 +39,7 @@
       - [NeoVim-nightly](#neovim-nightly)
         - [WSL clipboard](#wsl-clipboard)
         - [Linux clipboard](#linux-clipboard)
+        - [Roslyn Language Server](#roslyn-language-server)
     - [Linux Terminals](#linux-terminals)
       - [Wezterm terminal](#wezterm-terminal)
     - [Dev Tools](#dev-tools)
@@ -304,6 +306,22 @@ and select **map network drive..**
 Select drive letter and in folder type **\\wsl$\Arch**  
 Select Finish
 
+### Start sshd on Windows startup
+
+Create a task in Windows task scheduler with following settings:
+
+- General tab
+  - User account should be your user account
+  - **Run only when user is logged** on should be checked!!!
+  - **Run with the highest privileges** should be checked
+- Triggers tab
+  - Trigger should be **At log on**
+- Actions tab
+  - Program/script should be set to **wsl**
+  - Add arguments should be set to **-d arch -u root systemctl start sshd**
+- Conditions tab
+  - Power settings should be unchecked
+
 ## Linux Arch/Manjaro
 
 ### Zsh
@@ -500,7 +518,9 @@ On WSL instance install **xclip**
 To install latest DotNet language server, [Roslyn](https://github.com/jmederosalvarado/roslyn.nvim), few steps are needed (as it's not supported by usual nvim tooling):
 
 - Download [Roslyn Language Server](https://github.com/jmederosalvarado/roslyn.nvim/releases) from releases
-- Extract tar using: **tar zxf /path/to/roslyn.tar.gz -C ~/.local/share/nvim/roslyn**
+- Extract tar using: 
+  - **mkdir ~/.local/share/nvim/roslyn**
+  - **tar zxf /path/to/roslyn.tar.gz -C ~/.local/share/nvim/roslyn**
 - Make sure that **roslyn_version** option matches the downloaded language server version (plugins/lsp/roslyn.lua)
 ### Linux Terminals
 

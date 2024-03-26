@@ -30,6 +30,7 @@ else
 		multiplexing = "None",
 		default_prog = { "zsh" },
 	})
+	config.default_domain = "SSH:wsl-arch"
 end
 
 config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
