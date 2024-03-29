@@ -13,12 +13,14 @@ map("n", "n", "nzzzv", { noremap = true, silent = true })
 map("n", "N", "Nzzzv", { noremap = true, silent = true })
 map("n", "<F2>", "q", { noremap = true, silent = true })
 
-map({ "n", "v" }, "q", "<nop>", { silent = true })
+map("n", "<leader>ct", function()
+  require("copilot.suggestion").toggle_auto_trigger()
+end, { desc = "Toggle Copilot auto trigger" })
 
 -- neovim >= 0.10
 if not (vim.version().major == 0 and vim.version().minor < 10) then
   if vim.lsp.inlay_hint.enable then
-    map("n", "<leader>L", function()
+    map("n", "<leader>cL", function()
       if vim.lsp.inlay_hint.is_enabled() then
         vim.lsp.inlay_hint.enable(0, false)
       else
@@ -27,6 +29,8 @@ if not (vim.version().major == 0 and vim.version().minor < 10) then
     end, { desc = "Toggle Inlay Hints" })
   end
 end
+
+map({ "n", "v" }, "q", "<nop>", { silent = true })
 
 map("i", "<S-Tab>", "<BS>", { noremap = true, silent = true, desc = "Backspace" })
 map("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "Exit inster mode" })
