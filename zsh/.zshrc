@@ -37,8 +37,8 @@ bindkey '^e' edit-command-line
 bindkey '^B' list-choices
 # Bind ctrl-space to open menu
 bindkey -s '^@' '^B^I'
-# Bind ctrl+K to accept autosuggest
-bindkey '^K' autosuggest-accept
+# Bind alt+l to accept autosuggest
+bindkey '^[l' autosuggest-accept
 
 # Use vim keys in tab complete menu
 bindkey -M menuselect 'h' vi-backward-char
