@@ -6,7 +6,7 @@
     - [Scoop](#scoop)
     - [Oh my posh](#oh-my-posh)
     - [PowerShell](#powershell)
-      - [Fzf](#fzf)
+      - [Fzf PWSH](#fzf-pwsh)
     - [Rancher Desktop](#rancher-desktop)
     - [Microsoft PowerToys](#microsoft-powertoys)
     - [Visual Studio 2022](#visual-studio-2022)
@@ -30,6 +30,7 @@
     - [Start sshd on Windows startup](#start-sshd-on-windows-startup)
   - [Linux Arch/Manjaro](#linux-archmanjaro)
     - [Zsh](#zsh)
+      - [Fonts](#fonts)
       - [Oh my posh linux](#oh-my-posh-linux)
       - [Syntax Highlighting](#syntax-highlighting)
       - [Fzf keybindings](#fzf-keybindings)
@@ -94,7 +95,7 @@ PowerShell is the .NET Core version of PowerShell
 
     scoop install main/pwsh
 
-#### Fzf
+#### Fzf PWSH
 
 Install fuzzy finder for easier searching
 
@@ -346,11 +347,42 @@ Create a task in Windows task scheduler with following settings:
 
 ## Linux Arch/Manjaro
 
+### Yay Package Manager
+
+Yay package manager is needed for installing packages from AUR repository.
+
+Install *base-devel* and *git*
+
+    sudo pacman -S --needed base-devel git
+
+Clone yay git repo
+
+    git clone https://aur.archlinux.org/yay.git
+
+Switch dir to yay
+
+    cd yay
+
+Install yay
+
+    makepkg -si
+
+Remove git repo
+
+    cd ..
+    rm -r yay -f
+
 ### Zsh
 
 Install zsh
 
     sudo pacman -S zsh
+
+#### Fonts
+
+Install nerd fonts
+
+    yay -S ttf-cascadia-code-nerd
 
 #### Oh my posh linux
 
@@ -419,31 +451,6 @@ Activate the plugin
 Add following line above syntax highlighting plugin
 
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-### Yay Package Manager
-
-Yay package manager is needed for installing packages from AUR repository.
-
-Install *base-devel* and *git*
-
-    sudo pacman -S --needed base-devel git
-
-Clone yay git repo
-
-    git clone https://aur.archlinux.org/yay.git
-
-Switch dir to yay
-
-    cd yay
-
-Install yay
-
-    makepkg -si
-
-Remove git repo
-
-    cd ..
-    rm -r yay -f
 
 ### Enable SSH
 
