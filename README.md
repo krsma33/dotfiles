@@ -538,9 +538,9 @@ In neovim **init.lua** or **lua/config/options.lua** configure clipboard
 
     vim.opt.clipboard = "unnamedplus"
 
-On WSL instance install **xclip**
+On WSL instance install **wsl-clipboard** or **xclip** depending on the desktop environment
 
-    yay -S xclip
+    yay -S wsl-clipboard
 
 ##### Roslyn Language Server
 
