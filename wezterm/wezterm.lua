@@ -30,7 +30,6 @@ else
 		multiplexing = "None",
 		default_prog = { "zsh" },
 	})
-	config.default_domain = "SSH:wsl-arch"
 end
 
 config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
@@ -55,82 +54,10 @@ config.window_frame = {
 
 config.colors = {
 
-	tab_bar = {
-		-- The color of the strip that goes along the top of the window
-		-- (does not apply when fancy tab bar is in use)
-		background = "#15161E",
-
-		-- The active tab is the one that has focus in the window
-		active_tab = {
-			-- The color of the background area for the tab
-			bg_color = "#15161E",
-			-- The color of the text for the tab
-			fg_color = "#c0c0c0",
-
-			-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
-			-- label shown for this tab.
-			-- The default is "Normal"
-			intensity = "Normal",
-
-			-- Specify whether you want "None", "Single" or "Double" underline for
-			-- label shown for this tab.
-			-- The default is "None"
-			underline = "None",
-
-			-- Specify whether you want the text to be italic (true) or not (false)
-			-- for this tab.  The default is false.
-			italic = false,
-
-			-- Specify whether you want the text to be rendered with strikethrough (true)
-			-- or not for this tab.  The default is false.
-			strikethrough = false,
-		},
-
-		-- Inactive tabs are the tabs that do not have focus
-		inactive_tab = {
-			bg_color = "#1f212d",
-			fg_color = "#808080",
-
-			-- The same options that were listed under the `active_tab` section above
-			-- can also be used for `inactive_tab`.
-		},
-
-		-- You can configure some alternate styling when the mouse pointer
-		-- moves over inactive tabs
-		inactive_tab_hover = {
-			bg_color = "#2a2c3c",
-			fg_color = "#909090",
-			italic = true,
-
-			-- The same options that were listed under the `active_tab` section above
-			-- can also be used for `inactive_tab_hover`.
-		},
-
-		-- The new tab button that let you create new tabs
-		new_tab = {
-			bg_color = "#1f212d",
-			fg_color = "#808080",
-
-			-- The same options that were listed under the `active_tab` section above
-			-- can also be used for `new_tab`.
-		},
-
-		-- You can configure some alternate styling when the mouse pointer
-		-- moves over the new tab button
-		new_tab_hover = {
-			bg_color = "#2a2c3c",
-			fg_color = "#909090",
-			italic = true,
-
-			-- The same options that were listed under the `active_tab` section above
-			-- can also be used for `new_tab_hover`.
-		},
-	},
-
 	-- The default text color
-	foreground = "#B3C6E6",
+	foreground = "#B0B2AD",
 	-- The default background color
-	background = "#15161E",
+	background = "#2e2c2f",
 
 	-- Overrides the cell background color when the current cell is occupied by the
 	-- cursor and the cursor style is set to Block
@@ -154,24 +81,24 @@ config.colors = {
 	split = "#444444",
 
 	ansi = {
-		"#2D283F",
-		"#ED2261",
-		"#1FA91B",
-		"#9ECE6A",
-		"#487DF4",
-		"#8D35C9",
-		"#3BDEED",
-		"#9E9EA8",
+		"#2e2c2f", -- black
+		"#9D4B53", -- red
+		"#729B79", -- green
+		"#436E64", -- yellow
+		"#5292C6", -- blue
+		"#8C6AA8", -- magenta
+		"#326F73", -- cyan
+		"#e1e4dc", -- white
 	},
 	brights = {
-		"#59516A",
-		"#F8729A",
-		"#53AA5E",
-		"#9ECE6A",
-		"#A9BCEC",
-		"#AD81C2",
-		"#9DE3EB",
-		"#A288F7",
+		"#403F42", -- black
+		"#CD6169", -- red
+		"#98CCA4", -- green
+		"#609B8C", -- yellow
+		"#76ACE6", -- blue
+		"#B798E6", -- magenta
+		"#3B8187", -- cyan
+		"#FCFFF6", -- white
 	},
 }
 

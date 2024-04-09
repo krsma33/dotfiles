@@ -12,7 +12,7 @@
           "type": "root"
         },
         {
-          "foreground": "#ffffff",
+          "foreground": "#E1E4DC",
           "properties": {
             "alpine": "\uf300",
             "arch": "\uf303",
@@ -37,7 +37,7 @@
         },
         {
           "background": "#333333",
-          "foreground": "#3ec669",
+          "foreground": "#729B79",
           "properties": {
             "folder_icon": "\ue5fe",
             "folder_separator_icon": "<transparent> \ue0bd </>",
@@ -50,7 +50,7 @@
         },
         {
           "background": "#333333",
-          "foreground": "#43ccea",
+          "foreground": "#5292C6",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true
@@ -61,7 +61,7 @@
         },
         {
           "background": "#333333",
-          "foreground": "#ffffff",
+          "foreground": "#E1E4DC",
           "properties": {
             "style": "dallas",
             "threshold": 0
@@ -138,7 +138,7 @@
         },
         {
           "background": "#333333",
-          "foreground": "#43CCEA",
+          "foreground": "#5292C6",
           "leading_diamond": "\ue0c5",
           "style": "diamond",
           "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}",
@@ -146,14 +146,14 @@
         },
         {
           "background": "#333333",
-          "foreground": "#3ec669",
+          "foreground": "#729B79",
           "style": "diamond",
           "template": "<transparent> / </>{{ .HostName }}",
           "type": "session"
         },
         {
           "background": "#333333",
-          "foreground": "#ffffff",
+          "foreground": "#E1E4DC",
           "properties": {
             "time_format": "3:04:05 PM"
           },
@@ -169,7 +169,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#63F08C",
+          "foreground": "#729B79",
           "foreground_templates": [
             "{{ if gt .Code 0 }}#ff0000{{ end }}"
           ],
