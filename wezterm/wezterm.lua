@@ -30,6 +30,7 @@ else
 		multiplexing = "None",
 		default_prog = { "zsh" },
 	})
+	config.default_domain = "SSH:wsl-arch"
 end
 
 config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
@@ -55,7 +56,7 @@ config.window_frame = {
 config.colors = {
 
 	-- The default text color
-	foreground = "#B0B2AD",
+	foreground = "#e1e4dc",
 	-- The default background color
 	background = "#2e2c2f",
 
