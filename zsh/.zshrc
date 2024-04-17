@@ -7,6 +7,9 @@ neofetch
 # Turn off all beeps
 unsetopt BEEP
 
+# Ignore duplicate commands in history
+setopt histignoredups
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 
