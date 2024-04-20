@@ -17,7 +17,7 @@ return {
     lazy = true,
   },
   {
-    "jmederosalvarado/roslyn.nvim",
+    "krsma33/roslyn.nvim",
     ft = "cs",
     opts = require("plugins.lspconfig.roslyn"),
   },
