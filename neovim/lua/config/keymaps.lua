@@ -22,7 +22,7 @@ if not (vim.version().major == 0 and vim.version().minor < 10) then
   if vim.lsp.inlay_hint.enable then
     map("n", "<leader>cL", function()
       if vim.lsp.inlay_hint.is_enabled() then
-        vim.lsp.inlay_hint.enable(0, false)
+        vim.lsp.inlay_hint.enable(false)
       else
         vim.lsp.inlay_hint.enable()
       end
