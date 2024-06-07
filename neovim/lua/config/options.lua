@@ -13,7 +13,9 @@ vim.api.nvim_set_hl(0, "NeotestAdapterName", { link = "PreProc" })
 vim.api.nvim_set_hl(0, "NeotestDir", { link = "Directory" })
 vim.api.nvim_set_hl(0, "NeotestFile", { link = "Type" })
 vim.api.nvim_set_hl(0, "NeotestNamespace", { link = "Keyword" })
-
+-- Disable autoformat on save
+vim.g.autoformat = false
+-- Shell
 if path.is_windows then
   vim.opt.shell = "pwsh"
 else
