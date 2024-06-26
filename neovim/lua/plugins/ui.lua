@@ -38,4 +38,15 @@ return {
     "rcarriga/nvim-notify",
     opts = require("plugins.ui.nvim-notify"),
   },
+  {
+    "declancm/cinnamon.nvim",
+    event = "VimEnter",
+    config = true,
+    init = function()
+      local cinnamon = require("cinnamon")
+      -- Centered scrolling:
+      vim.keymap.set("n", "<C-U>", function() cinnamon.scroll("<C-U>zz") end)
+      vim.keymap.set("n", "<C-D>", function() cinnamon.scroll("<C-D>zz") end)
+    end,
+  },
 }

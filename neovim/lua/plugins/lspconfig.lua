@@ -3,13 +3,12 @@ return {
     "neovim/nvim-lspconfig",
     init = require("plugins.lspconfig.init")(),
     opts = {
-      inlay_hints = { enabled = true },
+      inlay_hints = { enabled = false },
       codelens = { enabled = false },
-      servers = {
-        -- omnisharp = require("plugins.lspconfig.omnisharp"),
-        -- csharp_ls = require("plugins.lspconfig.csharp_ls"),
-        yamlls = require("plugins.lspconfig.yamlls"),
-      },
+      -- servers = {
+      --   omnisharp = require("plugins.lspconfig.omnisharp"),
+      --   csharp_ls = require("plugins.lspconfig.csharp_ls"),
+      -- },
     },
   },
   -- {
