@@ -39,14 +39,22 @@ return {
     opts = require("plugins.ui.nvim-notify"),
   },
   {
+    "echasnovski/mini.icons",
+    opts = require("plugins.ui.mini-icons"),
+  },
+  {
     "declancm/cinnamon.nvim",
     event = "VimEnter",
     config = true,
     init = function()
       local cinnamon = require("cinnamon")
       -- Centered scrolling:
-      vim.keymap.set("n", "<C-U>", function() cinnamon.scroll("<C-U>zz") end)
-      vim.keymap.set("n", "<C-D>", function() cinnamon.scroll("<C-D>zz") end)
+      vim.keymap.set("n", "<C-U>", function()
+        cinnamon.scroll("<C-U>zz")
+      end)
+      vim.keymap.set("n", "<C-D>", function()
+        cinnamon.scroll("<C-D>zz")
+      end)
     end,
   },
 }
