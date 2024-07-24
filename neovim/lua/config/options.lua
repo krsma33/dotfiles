@@ -15,6 +15,8 @@ vim.api.nvim_set_hl(0, "NeotestFile", { link = "Type" })
 vim.api.nvim_set_hl(0, "NeotestNamespace", { link = "Keyword" })
 -- Disable autoformat on save
 vim.g.autoformat = false
+-- DIsable conceal (e.g. annoying on markdown)
+vim.wo.conceallevel = 0
 -- Shell
 if path.is_windows then
   vim.opt.shell = "pwsh"
