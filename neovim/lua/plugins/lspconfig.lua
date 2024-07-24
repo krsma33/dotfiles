@@ -1,7 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    init = require("plugins.lspconfig.init")(),
+    init = require("plugins.lspconfig.config_init")(),
     opts = {
       inlay_hints = { enabled = false },
       codelens = { enabled = false },
