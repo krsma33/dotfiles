@@ -12,7 +12,6 @@ require("lazy").setup({
 		-- add LazyVim and import its plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		-- import LazyVim extras and its plugins
-    { import = "lazyvim.plugins.extras.editor.telescope" },
 		{ import = "lazyvim.plugins.extras.ui.alpha" },
 		{ import = "lazyvim.plugins.extras.ui.edgy" },
 		{ import = "lazyvim.plugins.extras.dap.core" },
@@ -27,7 +26,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.markdown" },
 		{ import = "lazyvim.plugins.extras.lang.terraform" },
     { import = "lazyvim.plugins.extras.lang.helm" },
-		{ import = "lazyvim.plugins.extras.coding.copilot" },
+		{ import = "lazyvim.plugins.extras.ai.copilot" },
     { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
 		-- import/override with your plugins

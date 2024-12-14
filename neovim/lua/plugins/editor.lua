@@ -13,7 +13,7 @@ return {
     keys = require("plugins.editor.mini-bufremove").keys,
   },
   {
-    "nvim-telescope/telescope.nvim",
-    opts = require("plugins.editor.telescope"),
+    "ibhagwan/fzf-lua",
+    opts = require("plugins.editor.fzf"),
   },
 }

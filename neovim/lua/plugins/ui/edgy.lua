@@ -1,13 +1,4 @@
 return {
-  keys = {
-    {
-      "<C-S-b>",
-      function()
-        require("edgy").select()
-      end,
-      desc = "Edgy Select Window",
-    },
-  },
   opts = {
     bottom = {
       {
@@ -102,7 +93,6 @@ return {
       --   open = "Neotree position=top buffers",
       --   size = { width = 50 },
       -- },
-      "neo-tree",
     },
     keys = {
       -- increase width

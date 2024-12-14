@@ -13,6 +13,8 @@ vim.api.nvim_set_hl(0, "NeotestAdapterName", { link = "PreProc" })
 vim.api.nvim_set_hl(0, "NeotestDir", { link = "Directory" })
 vim.api.nvim_set_hl(0, "NeotestFile", { link = "Type" })
 vim.api.nvim_set_hl(0, "NeotestNamespace", { link = "Keyword" })
+-- Fzf-lua
+vim.api.nvim_set_hl(0, "FzfLuaBorder", { link = "Function" })
 -- Disable autoformat on save
 vim.g.autoformat = false
 -- DIsable conceal (e.g. annoying on markdown)
@@ -24,3 +26,5 @@ else
   vim.opt.shell = "zsh"
   vim.opt.clipboard = "unnamedplus"
 end
+-- Copilot
+vim.g.copilot_no_tab_map = true

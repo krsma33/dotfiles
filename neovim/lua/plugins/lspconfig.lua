@@ -2,21 +2,21 @@ return {
   {
     "neovim/nvim-lspconfig",
     init = require("plugins.lspconfig.config_init")(),
-    opts = {
-      inlay_hints = { enabled = false },
-      codelens = { enabled = false },
-      -- servers = {
-      --   omnisharp = require("plugins.lspconfig.omnisharp"),
-      --   csharp_ls = require("plugins.lspconfig.csharp_ls"),
-      -- },
-    },
+    -- opts = {
+    --   inlay_hints = { enabled = false },
+    --   codelens = { enabled = false },
+    --   -- servers = {
+    --   --   omnisharp = require("plugins.lspconfig.omnisharp"),
+    --   --   csharp_ls = require("plugins.lspconfig.csharp_ls"),
+    --   -- },
+    -- },
   },
   -- {
   --   "Decodetalkers/csharpls-extended-lsp.nvim",
   --   lazy = true,
   -- },
   {
-    "krsma33/roslyn.nvim",
+    "seblj/roslyn.nvim",
     ft = "cs",
     opts = require("plugins.lspconfig.roslyn"),
   },
