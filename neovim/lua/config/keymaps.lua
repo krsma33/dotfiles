@@ -27,7 +27,7 @@ end
 map({ "n", "v" }, "q", "<nop>", { silent = true })
 
 map("i", "<S-Tab>", "<BS>", { noremap = true, silent = true, desc = "Backspace" })
-map("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "Exit inster mode" })
+map("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "Exit insert mode" })
 map("i", "<C-h>", "<Left>", { noremap = true, silent = true })
 map("i", "<C-j>", "<Down>", { noremap = true, silent = true })
 map("i", "<C-k>", "<Up>", { noremap = true, silent = true })

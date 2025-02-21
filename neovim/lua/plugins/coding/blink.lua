@@ -42,9 +42,8 @@ return {
   sources = {
     compat = {},
     default = { "lsp", "path", "snippets", "buffer" },
-    cmdline = {},
   },
   keymap = {
-    preset = "super-tab"
+    preset = "enter"
   },
 }

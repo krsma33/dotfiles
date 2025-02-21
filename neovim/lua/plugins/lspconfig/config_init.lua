@@ -33,9 +33,7 @@ return function()
   -- Go to implementation
   keys[#keys + 1] = {
     "gi",
-    function()
-      require("telescope.builtin").lsp_implementations({ reuse_win = true })
-    end,
+    "<Cmd>FzfLua lsp_implementations jump1=true ignore_current_line=true<CR>",
     desc = "Goto Implementation",
   }
 
