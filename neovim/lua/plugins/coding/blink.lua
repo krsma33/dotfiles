@@ -44,6 +44,7 @@ return {
     default = { "lsp", "path", "snippets", "buffer" },
   },
   keymap = {
-    preset = "enter"
+    preset = "super-tab",
+    ['<CR>'] = { 'accept', 'fallback' },
   },
 }
