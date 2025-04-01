@@ -17,7 +17,7 @@ vim.api.nvim_set_hl(0, "NeotestNamespace", { link = "Keyword" })
 vim.api.nvim_set_hl(0, "FzfLuaBorder", { link = "Function" })
 -- Disable autoformat on save
 vim.g.autoformat = false
--- DIsable conceal (e.g. annoying on markdown)
+-- Disable conceal (e.g. annoying on markdown)
 vim.wo.conceallevel = 0
 -- Shell
 if path.is_windows then
@@ -25,8 +25,29 @@ if path.is_windows then
 else
   vim.opt.shell = "zsh"
   vim.opt.clipboard = "unnamedplus"
+
+  -- Disable paste on SSH since WezTerm is not supporting OSC 52 paste
+  if vim.env.SSH_TTY then
+    local function paste()
+      return {
+        vim.fn.split(vim.fn.getreg(""), "\n"),
+        vim.fn.getregtype(""),
+      }
+    end
+
+    vim.g.clipboard = {
+      name = "OSC 52",
+      copy = {
+        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+      },
+      paste = {
+        ["+"] = paste,
+        ["*"] = paste,
+      },
+    }
+  end
 end
 -- Copilot
 vim.g.copilot_no_tab_map = true
 vim.g.ai_cmp = false
-
