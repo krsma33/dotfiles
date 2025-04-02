@@ -15,10 +15,13 @@ vim.api.nvim_set_hl(0, "NeotestFile", { link = "Type" })
 vim.api.nvim_set_hl(0, "NeotestNamespace", { link = "Keyword" })
 -- Fzf-lua
 vim.api.nvim_set_hl(0, "FzfLuaBorder", { link = "Function" })
+
 -- Disable autoformat on save
 vim.g.autoformat = false
+
 -- Disable conceal (e.g. annoying on markdown)
 vim.wo.conceallevel = 0
+
 -- Shell
 if path.is_windows then
   vim.opt.shell = "pwsh"
@@ -48,6 +51,14 @@ else
     }
   end
 end
+
 -- Copilot
 vim.g.copilot_no_tab_map = true
 vim.g.ai_cmp = false
+
+-- Diagnostic text config
+vim.diagnostic.config({
+  virtual_lines = {
+    current_line = true,
+  }
+})

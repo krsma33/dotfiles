@@ -2,19 +2,11 @@ return {
   {
     "neovim/nvim-lspconfig",
     init = require("plugins.lspconfig.config_init")(),
-    -- opts = {
-    --   inlay_hints = { enabled = false },
-    --   codelens = { enabled = false },
-    --   -- servers = {
-    --   --   omnisharp = require("plugins.lspconfig.omnisharp"),
-    --   --   csharp_ls = require("plugins.lspconfig.csharp_ls"),
-    --   -- },
-    -- },
+    opts = function(_, opts)
+      -- Use neovim 0.11 virtual text in options.lua instead
+      opts.diagnostics.virtual_text = false
+    end,
   },
-  -- {
-  --   "Decodetalkers/csharpls-extended-lsp.nvim",
-  --   lazy = true,
-  -- },
   {
     "seblj/roslyn.nvim",
     ft = "cs",
@@ -23,7 +15,7 @@ return {
   {
     "mfussenegger/nvim-jdtls",
     ---@type lspconfig.options.jdtls
-    ---@diagnostic disable-next-line: missing-fields
+    ---@diagnostic disable: missing-fields
     opts = {
       jdtls = function(opts)
         local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
