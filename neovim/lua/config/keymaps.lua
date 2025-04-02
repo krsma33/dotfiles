@@ -15,15 +15,6 @@ map("n", "<leader>ct", function()
   require("copilot.suggestion").toggle_auto_trigger()
 end, { desc = "Toggle Copilot auto trigger" })
 
--- neovim >= 0.10
-if not (vim.version().major == 0 and vim.version().minor < 10) then
-  if vim.lsp.inlay_hint.enable then
-    map("n", "<leader>cL", function()
-      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-    end, { desc = "Toggle Inlay Hints" })
-  end
-end
-
 map({ "n", "v" }, "q", "<nop>", { silent = true })
 
 map("i", "<S-Tab>", "<BS>", { noremap = true, silent = true, desc = "Backspace" })
