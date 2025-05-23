@@ -4,6 +4,11 @@ return function(_, opts)
       "yamlfmt",
       -- "csharp-language-server",
       "netcoredbg",
+      "roslyn"
     })
   end
+  opts.registries = {
+    "github:mason-org/mason-registry",
+    "github:Crashdummyy/mason-registry", -- roslyn and rzls (if I need razor support at some point)
+  }
 end

@@ -16,7 +16,7 @@ return {
       },
     },
     trigger = {
-      show_in_snippet = false
+      show_in_snippet = false,
     },
     menu = {
       draw = {
@@ -44,7 +44,7 @@ return {
     default = { "lsp", "path", "snippets", "buffer" },
   },
   keymap = {
-    preset = "super-tab",
-    ['<CR>'] = { 'accept', 'fallback' },
+    preset = "enter",
+    ["<Tab>"] = { "accept", "fallback" },
   },
 }
