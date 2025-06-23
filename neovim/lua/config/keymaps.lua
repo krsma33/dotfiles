@@ -11,18 +11,12 @@ map("n", "n", "nzzzv", { noremap = true, silent = true })
 map("n", "N", "Nzzzv", { noremap = true, silent = true })
 map("n", "<F2>", "q", { noremap = true, silent = true })
 
-map("n", "<leader>ct", function()
-  require("copilot.suggestion").toggle_auto_trigger()
-end, { desc = "Toggle Copilot auto trigger" })
-
 map({ "n", "v" }, "q", "<nop>", { silent = true })
 
 map("i", "<S-Tab>", "<BS>", { noremap = true, silent = true, desc = "Backspace" })
 map("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "Exit insert mode" })
-map("i", "<C-h>", "<Left>", { noremap = true, silent = true })
-map("i", "<C-j>", "<Down>", { noremap = true, silent = true })
-map("i", "<C-k>", "<Up>", { noremap = true, silent = true })
-map("i", "<C-l>", "<Right>", { noremap = true, silent = true })
 
 map("x", "p", "P", { noremap = true, desc = "Paste without replacing yank register" })
 map("x", "P", "p", { noremap = true, desc = "Paste with replacing yank register with pasted over text" })
+
+map({ "i", "x", "n", "s" }, "<C-S-s>", "<cmd>wa<CR>", { noremap = true, silent = true, desc = "Save all buffers" })
