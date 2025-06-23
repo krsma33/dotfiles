@@ -8,7 +8,7 @@ return {
     end,
   },
   {
-    "seblj/roslyn.nvim",
+    "seblyng/roslyn.nvim",
     ft = "cs",
     opts = require("plugins.lspconfig.roslyn"),
   },

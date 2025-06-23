@@ -21,8 +21,8 @@ return {
     opts = require("plugins.ui.edgy").opts,
   },
   {
-    "goolord/alpha-nvim",
-    opts = require("plugins.ui.alpha"),
+    "snacks.nvim",
+    opts = require("plugins.ui.snacks"),
   },
   {
     "nvim-lualine/lualine.nvim",
