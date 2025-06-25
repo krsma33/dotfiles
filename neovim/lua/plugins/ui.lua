@@ -16,15 +16,6 @@ return {
     opts = require("plugins.ui.lazyvim"),
   },
   {
-    "folke/edgy.nvim",
-    event = "VeryLazy",
-    opts = require("plugins.ui.edgy").opts,
-  },
-  {
-    "snacks.nvim",
-    opts = require("plugins.ui.snacks"),
-  },
-  {
     "nvim-lualine/lualine.nvim",
     opts = require("plugins.ui.lualine"),
   },
@@ -41,19 +32,4 @@ return {
     "echasnovski/mini.icons",
     opts = require("plugins.ui.mini-icons"),
   },
-  -- {
-  --   "declancm/cinnamon.nvim",
-  --   event = "VimEnter",
-  --   config = true,
-  --   init = function()
-  --     local cinnamon = require("cinnamon")
-  --     -- Centered scrolling:
-  --     vim.keymap.set("n", "<C-U>", function()
-  --       cinnamon.scroll("<C-U>zz")
-  --     end)
-  --     vim.keymap.set("n", "<C-D>", function()
-  --       cinnamon.scroll("<C-D>zz")
-  --     end)
-  --   end,
-  -- },
 }

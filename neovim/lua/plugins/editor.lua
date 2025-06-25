@@ -1,7 +1,7 @@
 return {
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = require("plugins.editor.neotree"),
+    "snacks.nvim",
+    opts = require("plugins.editor.snacks").opts,
   },
   {
 
@@ -11,9 +11,5 @@ return {
   {
     "echasnovski/mini.bufremove",
     keys = require("plugins.editor.mini-bufremove").keys,
-  },
-  {
-    "ibhagwan/fzf-lua",
-    opts = require("plugins.editor.fzf"),
   },
 }
