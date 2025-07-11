@@ -76,6 +76,10 @@ Oh my posh is used to customize prompt in your terminal
     scoop install main/oh-my-posh
 
 Download and install the nerd font.
+
+    scoop bucket add nerd-fonts
+    scoop install nerd-fonts/CascadiaCode-NF-Mono
+
 [Caskaydia Cove Nerd Font Complete](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip)
 looks nice.
 
@@ -103,6 +107,7 @@ Install fuzzy finder for easier searching
 
 Install PSFzf wrapper for pwsh
 
+    scoop bucket add extras
     scoop install PSFzf
 
 Edit powershell profile
@@ -152,7 +157,6 @@ Terminal written in Rust
 
 Windows Terminal is terminal created by Microsoft.
 
-    scoop bucket add extras
     scoop install extras/windows-terminal
 
 Windows Terminal configuration can be found in **windows-terminal** subfolder.
@@ -242,11 +246,11 @@ Lazy git is command line git tool
 
 ### Install
 
-Install WSL (will install Ubuntu distro by default)
+Install WSL
 
-    wsl --install
+    wsl --install --no-distribution
 
-Install Arch Linux distro from Windows Store
+Install Arch Linux distro
 
     https://github.com/VSWSL/Arch-WSL
 
@@ -602,11 +606,11 @@ Usage e.g.:
 - fzf
 - kubectl get pods -A --no-headers | fzf | awk '{print $2, $1}' | xargs -n 2 sh -c 'kubectl describe pod $0 -n $1'
 
-#### Neofetch
+#### Fastfetch
 
-Instal **neofetch**, a tool to display system information
+Instal **fastfetch**, a tool to display system information
 
-    yay -S neofetch
+    yay -S fastfetch
 
 #### Manuals
 
