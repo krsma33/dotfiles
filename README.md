@@ -25,7 +25,7 @@
     - [Lazygit](#lazygit)
   - [WSL2](#wsl2)
     - [Install](#install)
-    - [Wslu](#wslu)
+    - [Browser Redirect](#browser-redirect)
     - [Map to drive](#map-to-drive)
     - [Start sshd on Windows startup](#start-sshd-on-windows-startup)
   - [Linux Arch/Manjaro](#linux-archmanjaro)
@@ -49,7 +49,7 @@
       - [Docker](#docker)
       - [Kubectl](#kubectl)
       - [Fzf](#fzf)
-      - [Neofetch](#neofetch)
+      - [Fastfetch](#fastfetch)
       - [Manuals](#manuals)
       - [Less](#less)
       - [Sed](#sed)
@@ -289,34 +289,7 @@ Initialize key ring
     sudo pacman -Sy archlinux-keyring
     sudo pacman -Su
 
-### Wslu
-
-Wslu is a collection of [Utilities for WSL](https://wslutiliti.es/wslu/install.html).
-The reason for installing is mainly for **wslview** which allows opening Windows
-explorer or browsr from WSL.
-
-Download WSL Utilities Package
-
-    curl https://pkg.wslutiliti.es/public.key >> public.key
-    sudo pacman-key --add public.key
-
-Locally sign the key (if not signed)
-
-    sudo pacman-key --lsign-key 2D4C887EB08424F157151C493DD50AA7E055D853
-
-Modify **pacman.conf** to include the repository
-
-    sudo nano /etc/pacman.conf
-
-Add following
-
-    [wslutilities]
-    Server = https://pkg.wslutiliti.es/arch/
-
-Run cmds
-
-    sudo pacman -Sy
-    sudo pacman -S wslu
+### Browser Redirect
 
 Set environment variable of default browser:
 
@@ -324,7 +297,7 @@ Set environment variable of default browser:
 
 Add following line:
 
-    export BROWSER=wslview
+    export BROWSER='/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
 
 ### Map to drive
 
