@@ -252,15 +252,7 @@ Install WSL
 
 Install Arch Linux distro
 
-    https://github.com/VSWSL/Arch-WSL
-
-Start **arch** in **powershell** and setup user and password
-
-    arch
-
-Set arch as default wsl distro
-
-    wsl --set-default arch
+    wsl --install archlinux
 
 Open **wsl**
 
@@ -278,6 +270,10 @@ Install zsh
 
     sudo pacman -S zsh
 
+Create a user
+
+    sudo useradd -m -G wheel -s /bin/zsh {username}
+
 Setup default user
 
     sudo usermod -aG wheel -s /bin/zsh {username}
@@ -288,6 +284,14 @@ Initialize key ring
     sudo pacman-key --populate
     sudo pacman -Sy archlinux-keyring
     sudo pacman -Su
+
+Setup locale - uncomment 'en_US.UTF-8'
+
+    sudo nvim /etc/locale.gen
+
+Run locale-gen
+
+    sudo locale-gen en_US en_US.UTF-8
 
 ### Browser Redirect
 
@@ -318,7 +322,7 @@ Create a task in Windows task scheduler with following settings:
   - Trigger should be **At log on**
 - Actions tab
   - Program/script should be set to **wsl**
-  - Add arguments should be set to **-d arch -u root systemctl start sshd**
+  - Add arguments should be set to **-d archlinux -u root systemctl start sshd**
 - Conditions tab
   - Power settings should be unchecked
 
