@@ -595,6 +595,10 @@ Instal **fastfetch**, a tool to display system information
 
     yay -S fastfetch
 
+Add following line to .zshrc at startup
+
+    fastfetch -l ~/.config/fastfetch/acsii_art.txt --logo-color-1 green
+
 #### Manuals
 
 Install manuals database for Linux commands
