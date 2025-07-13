@@ -320,11 +320,17 @@ Create a task in Windows task scheduler with following settings:
   - **Run with the highest privileges** should be checked
 - Triggers tab
   - Trigger should be **At log on**
+  - Delay Task For should be **30 seconds**
 - Actions tab
   - Program/script should be set to **wsl**
-  - Add arguments should be set to **-d archlinux -u root systemctl start sshd**
+  - Add arguments should be set to **-d archlinux -- dbus-launch true**
 - Conditions tab
   - Power settings should be unchecked
+
+In Windows %UserProfile% dir you may need to configure .wslconfig with following
+
+    [wsl2]
+    vmIdleTimeout=86400000
 
 ## Linux Arch/Manjaro
 
