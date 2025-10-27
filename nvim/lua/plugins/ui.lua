@@ -29,7 +29,12 @@ return {
     opts = require("plugins.ui.nvim-notify"),
   },
   {
-    "echasnovski/mini.icons",
+    "nvim-mini/mini.icons",
     opts = require("plugins.ui.mini-icons"),
+  },
+  {
+    "folke/edgy.nvim",
+    event = "VeryLazy",
+    opts = require("plugins.ui.edgy").opts,
   },
 }

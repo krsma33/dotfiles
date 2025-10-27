@@ -2,40 +2,38 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-local codelens_filetypes = { "cs", "rust" }
-
-local function shouldActivateCodelens()
-  for index = 1, #codelens_filetypes do
-    if codelens_filetypes[index] == vim.bo.filetype then
-      return true
-    end
-  end
-end
-
 -- Enable code lens
 vim.api.nvim_create_autocmd({ "LspAttach" }, {
-  callback = function()
-    if shouldActivateCodelens() then
-      local buf = tonumber(vim.fn.expand("<abuf>"))
-      if buf then
-        vim.lsp.buf_request(
-          buf,
-          "textDocument/codeLens",
-          { textDocument = vim.lsp.util.make_text_document_params(buf) }
-        )
-        vim.lsp.codelens.refresh()
-      end
+  callback = function(args)
+    local bufnr = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+    if client and client:supports_method("textDocument/codeLens") then
+      vim.lsp.codelens.refresh()
+      vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "BufWritePre" }, {
+        buffer = bufnr,
+        callback = vim.lsp.codelens.refresh,
+      })
     end
   end,
 })
--- refresh code lens
-vim.api.nvim_create_autocmd({ "BufRead", "InsertLeave", "BufWritePre" }, {
+
+-- Refresh code lens when roslyn is initialized
+vim.api.nvim_create_autocmd("User", {
+  pattern = "RoslynInitialized",
   callback = function()
-    if shouldActivateCodelens() then
-      local buf = tonumber(vim.fn.expand("<abuf>"))
-      if buf then
-        vim.lsp.codelens.refresh()
-      end
-    end
+    vim.lsp.codelens.refresh()
+  end,
+})
+
+-- Suppress Noice Progress errors for roslyn
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "cs" },
+  callback = function()
+    vim.api.nvim_clear_autocmds({
+      group = "noice_lsp_progress",
+      event = "LspProgress",
+      pattern = "*",
+    })
   end,
 })

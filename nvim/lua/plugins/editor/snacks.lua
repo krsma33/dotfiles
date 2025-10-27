@@ -18,10 +18,16 @@ local logo = [[
 
 return {
   opts = {
+    image = {
+      enabled = false,
+    },
     dashboard = {
       preset = {
         header = logo,
       },
+    },
+    explorer = {
+      trash = true,
     },
     picker = {
       sources = {

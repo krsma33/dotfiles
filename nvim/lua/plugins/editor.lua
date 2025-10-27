@@ -9,7 +9,7 @@ return {
     opts = require("plugins.editor.flash"),
   },
   {
-    "echasnovski/mini.bufremove",
+    "nvim-mini/mini.bufremove",
     keys = require("plugins.editor.mini-bufremove").keys,
   },
 }
