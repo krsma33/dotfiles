@@ -11,6 +11,21 @@ return {
     Separator = { bg = "none" },
     TabLineFill = { bg = "none" },
     ColorColumn = { bg = "#151a1e", fg = "#729b79" },
+    -- LSP
+    LspReferenceText = { link = "Substitute" },
+    -- LspReferenceText = { link = "Search" },
+    -- LspReferenceText = { link = "CurSearch" },
+    -- Cmp
+    CmpDocumentationCustom = { bg = "#1d1c1d" },
+    -- NeoTest
+    NeotestAdapterName = { link = "PreProc" },
+    NeotestDir = { link = "Directory" },
+    NeotestFile = { link = "Type" },
+    NeotestNamespace = { link = "Keyword" },
+    -- Snacks
+    SnacksPickerListCursorLine = { link = "CursorLine" },
+    -- Satellite
+    SatelliteBackground = { link = "ColorColumn" },
   },
   colors = { bg0 = "#14191f" },
 }

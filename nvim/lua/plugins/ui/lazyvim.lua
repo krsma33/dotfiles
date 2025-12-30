@@ -1,5 +1,6 @@
 return {
   colorscheme = "leaf",
+  -- colorscheme = "tokyonight",
   icons = {
     misc = {
       dots = "󰇘",

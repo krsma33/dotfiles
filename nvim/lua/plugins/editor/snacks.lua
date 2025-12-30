@@ -29,6 +29,10 @@ return {
     explorer = {
       trash = true,
     },
+    scroll = {
+      -- Smooth Scrolling
+      enabled = false,
+    },
     picker = {
       sources = {
         explorer = {

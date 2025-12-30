@@ -37,4 +37,11 @@ return {
     event = "VeryLazy",
     opts = require("plugins.ui.edgy").opts,
   },
+  {
+    "lewis6991/satellite.nvim",
+    opts = require("plugins.ui.satellite"),
+    init = function()
+      require('satellite').setup()
+    end,
+  }
 }

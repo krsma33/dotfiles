@@ -10,7 +10,7 @@ return {
       match = "FlashMatch",
       current = "FlashCurrent",
       backdrop = "FlashBackdrop",
-      label = "FlashLabelCustom",
+      label = "CurSearch",
     },
   },
   modes = {
