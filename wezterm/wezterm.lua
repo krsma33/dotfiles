@@ -33,8 +33,8 @@ else
 	config.default_domain = "SSH:wsl-arch"
 end
 
-config.font = wezterm.font("CaskaydiaCove Nerd Font Mono")
-config.font_size = 13
+config.font = wezterm.font_with_fallback({ "CaskaydiaCove Nerd Font Mono", "JetBrains Mono" })
+config.font_size = 12
 
 config.default_cursor_style = "SteadyBar"
 
@@ -52,6 +52,22 @@ config.window_frame = {
 	-- the window is not focused
 	inactive_titlebar_bg = "#333333",
 }
+
+config.window_padding = {
+  left = '0.5cell',
+  right = '0.5cell',
+  top = '0.25cell',
+  bottom = '0.25cell',
+}
+
+config.window_background_opacity = 0.95
+config.window_background_image = wezterm.config_dir
+	.. path_separator
+	.. "background"
+	.. path_separator
+	.. "abstr-blur-darker.png"
+
+config.allow_win32_input_mode = false
 
 config.colors = {
 
@@ -102,15 +118,6 @@ config.colors = {
 		"#FCFFF6", -- white
 	},
 }
-
-config.window_background_opacity = 0.95
-config.window_background_image = wezterm.config_dir
-	.. path_separator
-	.. "background"
-	.. path_separator
-	.. "abstr-blur-darker.png"
-
-config.allow_win32_input_mode = false
 
 local active_table_name = ""
 

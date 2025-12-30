@@ -4,6 +4,8 @@
 
 local path = require("utils.path")
 
+-- Set root to working directory instead of auto-detected root
+vim.g.root_spec = { "cwd" }
 -- Disable autoformat on save
 vim.g.autoformat = false
 

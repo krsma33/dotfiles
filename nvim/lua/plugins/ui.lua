@@ -43,5 +43,5 @@ return {
     init = function()
       require('satellite').setup()
     end,
-  }
+  },
 }

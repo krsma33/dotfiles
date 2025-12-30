@@ -7,10 +7,15 @@ local map = vim.keymap.set
 map("n", "U", "<C-r>", { noremap = true, silent = true, desc = "Redo" })
 map("n", "gh", "_", { noremap = true, silent = true, desc = "Go to start of first word in the line" })
 map("n", "gl", "$", { noremap = true, silent = true, desc = "Go to end of the line" })
+
+-- Remaps
+map("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
+map("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
 map("n", "n", "nzzzv", { noremap = true, silent = true })
 map("n", "N", "Nzzzv", { noremap = true, silent = true })
 map("n", "<F2>", "q", { noremap = true, silent = true })
 
+-- Disable q key
 map({ "n", "v" }, "q", "<nop>", { silent = true })
 
 -- Insert mode
