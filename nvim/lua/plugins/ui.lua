@@ -20,6 +20,10 @@ return {
     opts = require("plugins.ui.lualine"),
   },
   {
+    "akinsho/bufferline.nvim",
+    opts = require("plugins.ui.bufferline"),
+  },
+  {
     "folke/noice.nvim",
     event = "VimEnter",
     opts = require("plugins.ui.noice"),
