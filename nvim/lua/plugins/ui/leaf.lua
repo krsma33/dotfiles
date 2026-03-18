@@ -33,6 +33,11 @@ return {
     SnacksPickerListCursorLine = { link = "CursorLine" },
     -- Satellite
     SatelliteBackground = { link = "ColorColumn" },
+    -- Diff
+    DiffChange = { bg = "#0f131a" },
+    SnacksDiffContextLineNr = { bg = "#0f131a", fg = "#363646" },
+    DiffAdd = { bg = "#0f131a", fg = "#47b874" },
+    DiffDelete = { bg = "#0f131a", fg = "#ff0066" },
   },
   colors = { bg0 = "#14191f" },
 }
