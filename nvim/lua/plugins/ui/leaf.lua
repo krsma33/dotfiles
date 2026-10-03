@@ -17,7 +17,7 @@ return {
     SnacksPickerTree = { link = "SnacksIndent" },
     LineNr = { fg = "#363646" },
     TabLineFill = { bg = "none" },
-    olorColumn = { bg = "#151a1e", fg = "#729b79" },
+    ColorColumn = { bg = "#151a1e", fg = "#729b79" },
     -- LSP
     LspReferenceText = { link = "Substitute" },
     -- LspReferenceText = { link = "Search" },
